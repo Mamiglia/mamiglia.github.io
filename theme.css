@@ -30,7 +30,7 @@ a {
     z-index: 20;
     font-size: 63px;
     width: 100%;
-    background-image: url(x.jpg);
+    background-image: url(data/images/intro-background.jpg);
     color: white;
     height: 400px;
     text-align: center;
