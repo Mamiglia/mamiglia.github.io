@@ -178,7 +178,6 @@ footer {
   margin-top: 13em;
   display: inline-flex;
   width: 100%;
-  overflow: hidden;
   justify-content: center;
   align-content: space-between;
 }
@@ -200,6 +199,10 @@ footer img {
   margin-top: 6em;
   margin-right: 1em;
 }
-@media only screen and (max-width: 600px) {
-
+@media only screen and (max-width: 900px) {
+  .learning .learn {
+  }
+  .learning h2 {
+    display: none;
+  }
 }
