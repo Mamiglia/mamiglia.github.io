@@ -18,7 +18,6 @@ a {
   height: 3em;
   position: fixed;
   display: flex;
-  grid-template-columns: 6fr 1fr 1fr;
   padding-top: 1em;
   padding-bottom: 1em;
   z-index: 1;
