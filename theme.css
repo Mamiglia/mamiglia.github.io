@@ -44,6 +44,7 @@ a {
   background-size: cover;
 }
 #Who {
+  margin-top: 3em;
   width: 100%;
   justify-content: center;
   justify-items: center;
@@ -72,39 +73,29 @@ a {
   width: 40%;
 }
 .learning {
-  padding-right: 0px;
-  overflow: hidden;
-  height: 2%;
   width: 98%;
-  grid-template-columns: 20% 4% 60% 4%;
-  grid-gap: 1em;
-  height: 20em;
+  height: 23em;
   margin: 20em 0px 12em 1em;
-  display: grid;
+  display: flex;
 }
 .learning h1 {
-  grid-area: 1 / span 1 / span 1;
   margin: auto;
   font-size: 1.8em;
+  flex-grow: 2;
 }
 .learning h2 {
   font-size: 12em;
   margin: auto;
-}
-.learning h2 .fcurly {
-  grid-area: 0.5 / span 1 / span 1;
-}
-.learning h2 .scurly {
-  grid-area: 0.25 / span 1 / span 1;
+  flex-grow: 1;
 }
 .learning .learn {
-  grid-area: 0.33333 / span 1 / span 1;
   overflow: hidden;
   justify-content: center;
   align-content: center;
   align-items: center;
   text-align: center;
   margin: auto;
+  flex-grow: 4;
 }
 .learning card {
   width: 10em;
@@ -208,4 +199,7 @@ footer img {
   text-align: right;
   margin-top: 6em;
   margin-right: 1em;
+}
+@media only screen and (max-width: 600px) {
+
 }
