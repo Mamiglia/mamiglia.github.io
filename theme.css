@@ -14,21 +14,20 @@ a {
   color: white;
   text-align: left;
   width: 100%;
-  padding-left: 1em;
   height: 3em;
   position: fixed;
   display: flex;
   padding-top: 1em;
   padding-bottom: 1em;
-  z-index: 1;
   background-color: #1b1b1b;
 }
 .header h1 {
+  padding-left: 1em;
   flex-grow: 8;
-  z-index: 3;
 }
 .header h3 {
   flex-grow: 1;
+  flex-basis: content;
 }
 #intro h1 {
   z-index: 2;
@@ -58,7 +57,7 @@ a {
 }
 #Who card {
   min-width: 70px;
-  width: 33%;
+  width: 30%;
   display: inline-block;
   vertical-align: center;
   align-content: center;
@@ -176,15 +175,17 @@ a {
 }
 footer {
   margin-top: 13em;
-  display: inline-flex;
+  display: flex;
   width: 100%;
   justify-content: center;
   align-content: space-between;
+  flex-wrap: wrap;
 }
 footer h2 {
   line-height: 2em;
   height: 4em;
   flex-grow: 9;
+  min-width: 50%
 }
 footer img {
   flex-grow: 1;
@@ -200,8 +201,6 @@ footer img {
   margin-right: 1em;
 }
 @media only screen and (max-width: 900px) {
-  .learning .learn {
-  }
   .learning h2 {
     display: none;
   }
