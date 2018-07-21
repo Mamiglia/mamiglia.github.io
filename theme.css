@@ -220,9 +220,21 @@ footer img {
     flex-basis: 100%;
   }
   #Who .box p {
+    width: 90%;
     font-size: 0.8em;
   }
   .learning h2 {
     display: none;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .header {
+    font-size: 0.9em;
+  }
+  .intro {
+    font-size: 3.7em;
+  }
+  #projects .card {
+    width: 16em;
   }
 }
