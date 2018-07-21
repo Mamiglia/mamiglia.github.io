@@ -213,8 +213,8 @@ footer img {
   .header {
     font-size: 1.1em;
   }
-  #intro h1 {
-    font-size: 4em;
+  .intro {
+    font-size: 5em;
   }
   #Who .box {
     flex-basis: 100%;
