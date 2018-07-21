@@ -29,7 +29,7 @@ a {
   flex-grow: 1;
   flex-basis: content;
 }
-#intro h1 {
+.intro {
   z-index: 2;
   font-size: 6em;
   width: 100%;
@@ -62,7 +62,7 @@ a {
   margin-left: 2%;
   margin-right: 2%;
 }
-#Who card {
+#Who .box {
   width: 30%;
   display: inline-block;
   vertical-align: center;
@@ -70,13 +70,13 @@ a {
   margin-bottom: 3em;
 
 }
-#Who card p {
+#Who .box p {
   margin: auto;
   max-width: 300px;
   min-width: 50px;
   padding-top: 1em;
 }
-#Who card img {
+#Who .box img {
   width: 40%;
 }
 .learning {
@@ -105,7 +105,7 @@ a {
   margin: auto;
   flex-grow: 4;
 }
-.learning card {
+.learning .box {
   width: 10em;
   height: 10em;
   text-align: center;
@@ -145,7 +145,7 @@ a {
   align-items: center;
   margin: 6em 15% 3em 15%;
 }
-#projects card {
+#projects .card {
   width: 18em;
   height: 27em;
   margin: 0px 1em 4em 1em;
@@ -170,7 +170,7 @@ a {
   width: 100%;
   object-fit: cover;
 }
-#projects .site h2 {
+#projects .fakeImg {
   margin-bottom: 0.5em;
   font-weight: bold;
   font-size: 2.5em;
@@ -216,10 +216,10 @@ footer img {
   #intro h1 {
     font-size: 5em;
   }
-  #Who card {
+  #Who .box {
     flex-basis: 100%;
   }
-  #Who card p {
+  #Who .box p {
     font-size: 0.8em;
   }
   .learning h2 {
