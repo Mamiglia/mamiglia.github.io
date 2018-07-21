@@ -203,7 +203,7 @@ footer img {
 }
 @media only screen and (max-width: 900px) {
   #intro h1 {
-    font-size: 4em;
+    font-size: 2em;
   }
   .learning h2 {
     display: none;
