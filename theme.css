@@ -20,6 +20,7 @@ a {
   padding-top: 1em;
   padding-bottom: 1em;
   background-color: #1b1b1b;
+  z-index: 2;
 }
 .header h1 {
   padding-left: 2%;
