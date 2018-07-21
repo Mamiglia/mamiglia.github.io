@@ -22,8 +22,8 @@ a {
   background-color: #1b1b1b;
 }
 .header h1 {
-  padding-left: 1em;
-  flex-grow: 8;
+  padding-left: 2%;
+  flex-grow: 7;
 }
 .header h3 {
   flex-grow: 1;
@@ -72,13 +72,14 @@ a {
   width: 40%;
 }
 .learning {
-  width: 98%;
-  height: 23em;
-  margin: 20em 0px 12em 1em;
+  width: 100%;
+  height: 100%;
+  margin: 20em 0px 12em 0em;
   display: flex;
 }
 .learning h1 {
   margin: auto;
+  margin-left: 2%;
   font-size: 1.8em;
   flex-grow: 2;
 }
@@ -183,7 +184,7 @@ footer {
 }
 footer h2 {
   line-height: 2em;
-  height: 4em;
+  height: 100%;
   flex-grow: 9;
   min-width: 50%
 }
@@ -201,6 +202,9 @@ footer img {
   margin-right: 1em;
 }
 @media only screen and (max-width: 900px) {
+  #intro h1 {
+    font-size: 4em;
+  }
   .learning h2 {
     display: none;
   }
