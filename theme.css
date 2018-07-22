@@ -8,6 +8,42 @@
 a {
   color: white;
 }
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes fadeInDownSmooth {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -10%, 0);
+    transform: translate3d(0, -10%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes fadeInDownSmooth {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -10%, 0);
+    transform: translate3d(0, -10%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.fadeInDownSmooth {
+  -webkit-animation-name: fadeInDownSmooth;
+  animation-name: fadeInDownSmooth;
+}
 .header {
   overflow: hidden;
   font-size: 1.25em;
