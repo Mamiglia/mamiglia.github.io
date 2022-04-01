@@ -200,4 +200,19 @@ export default {
   width: 99vw;
   /* overflow-x: hidden; */
 }
+
+@media screen and (orientation:portrait) {
+  .main {
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+  }
+
+  #sidemenu {
+    position: static;
+    width: 100vw;
+  }
+}
 </style>
