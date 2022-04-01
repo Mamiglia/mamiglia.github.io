@@ -4,9 +4,9 @@
             <h1>Matteo<br>Migliarini</h1>
         </header>
         <ul>
-            <li><a href="#projects">>Projects</a></li>
-            <li><a href="#knowledge">>Knowledge</a></li>
-            <li><a href="#contacts">>Contacts</a></li>
+            <li><a href="#projects">Projects&lt</a></li>
+            <li><a href="#knowledge">Knowledge&lt</a></li>
+            <li><a href="#contacts">Contacts&lt</a></li>
         </ul>
     </div>
 </template>
@@ -14,11 +14,14 @@
 <style scoped>
 header {
     padding: 2em;
+    padding-right: 0;
 }
 #sidemenu {
+    padding: 2rem;
     background-color: var(--color-background-mute);
-    height: 100vh;
+    height: 100%;
     width: 100%;
+    text-align: right;
 }
 a {
     text-decoration: none;
@@ -30,7 +33,7 @@ a:hover {
 }
 a::after {
     display: inline-block;
-    content: " ";
+    content: "";
     position: absolute;
     width: 100%;
     height: 3px;
@@ -46,9 +49,11 @@ a:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
+
 li {
-    padding: 1em 0 0 1em;
+    padding: 1rem 0 0 1rem;
     font-family: 'Courier New', Courier, monospace;
+    font-size: 1.3rem;
 }
 ul {
     list-style: none;
