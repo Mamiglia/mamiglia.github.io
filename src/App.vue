@@ -23,14 +23,15 @@ export default {
         {
           title: "Meravigliosi Automi",
           image: "",
-          text: "    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-          link: "",
-          gitLink: ""
+          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          link: "https://mamiglia.github.io/meravigliosi-automi",
+          gitLink: "https://github.com/Mamiglia/meravigliosi-automi"
         },
         {
-          title: "this",
+          title: "this.",
           image: "",
-          text: "This same site is one of my projects. Built in Vue js."
+          text: "This same site is one of my projects. Built in Vue js.",
+          gitLink: "https://github.com/Mamiglia/mamiglia.github.io"
         }
       ]
     }
@@ -64,7 +65,7 @@ export default {
 
     </div>
   </div>
-  
+   
 </template>
 
 <style>
@@ -90,7 +91,6 @@ export default {
 #contacts {
   grid-area: c;
 }
-
 
 .root {
   margin: 0;
