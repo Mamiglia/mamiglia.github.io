@@ -14,12 +14,12 @@ export default {
 <template>
     <div class="project">
         <h2>{{title}}</h2>
-        <img v-if="image!==''" :src="image">
+        <img v-if="image && image!==''" :src="image">
         <p>{{text}}</p>
         <div class="links">
-            <a v-if="gitLink!==''" :href="gitLink"><i class='fa fa-github' ></i></a>
-            <a v-if="link!==''" :href="link"><span class="material-icons">link</span></a>
-            <a v-if="link!==''" :href="link"><span class="material-icons">share</span></a>
+            <a v-if="gitLink && gitLink!==''" :href="gitLink"><i class='fa fa-github' ></i></a>
+            <a v-if="link && link!==''" :href="link"><span class="material-icons">link</span></a>
+            <a v-if="link && link!==''" :href="link"><span class="material-icons">share</span></a>
         </div>
     </div>
 </template>
@@ -27,7 +27,11 @@ export default {
 <style scoped>
 .project{
     width: 50vw;
-    margin: 5% 0 5% 5%;
+    max-height: 80vh;
+    margin: 10% 5% 5% 5%;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
 }
 
 p {
@@ -52,16 +56,22 @@ i {
 .links>a {
     aspect-ratio: 1/1;
     text-decoration: none;
-    color: --var(--color-text);
+    margin-left: 1em;
+    color: var(--accent-light);
 }
 a:visited {
-    color: var(--color-text);
+    color: var(--accent-light);
 }
 a:hover {
-    color: var(--accent);
+    color: var(--accent-dark);
 }
 .links>a>*:hover {
     transform: scale(1.3);
+}
+
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--accent);
 }
 
 
