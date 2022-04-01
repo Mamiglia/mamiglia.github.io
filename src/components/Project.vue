@@ -28,6 +28,7 @@ export default {
 .project{
     width: 50vw;
     max-height: 80vh;
+    height: fit-content;
     margin: 10% 5% 5% 5%;
     /* display: flex;
     flex-direction: column;

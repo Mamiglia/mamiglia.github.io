@@ -19,7 +19,7 @@ export default {
     </div>
 </template>
 
-<style>
+<style scoped>
 .skill {
     background-color: var(--color-background-soft);
     border-radius: 1em;

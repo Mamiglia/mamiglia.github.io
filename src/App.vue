@@ -3,6 +3,7 @@ import Sidemenu from './components/Sidemenu.vue';
 import VueHorizontal from "vue-horizontal";
 import Project from "./components/Project.vue";
 import Skill from "./components/Skill.vue";
+import Contact from './components/Contact.vue';
 
 function shuffleArray(array) {
     for (var i = array.length - 1; i > 0; i--) {
@@ -20,8 +21,9 @@ export default {
     Sidemenu,
     VueHorizontal,
     Project,
-    Skill
-  },
+    Skill,
+    Contact
+},
   data() {
     return {
       projects : [
@@ -96,7 +98,24 @@ export default {
           img: "../../data/images/prolog.svg"
         }
         
-      ])
+      ]),
+      contacts: [
+        {
+          name:"Github",
+          icon: "fa fa-github",
+          link: "https://github.com/Mamiglia"
+        },
+        {
+          name: "Telegram",
+          icon: "fa fa-telegram",
+          link: "https://t.me/mamiglia"
+        },
+        {
+          name: "Reddit",
+          icon: "fa fa-reddit",
+          link: "https://www.reddit.com/user/mamiglia"
+        }
+      ]
     }
   }
   
@@ -124,7 +143,10 @@ export default {
             />
       </vue-horizontal>
       <div id="contacts">
-  
+        <Contact v-for="c in contacts"
+          :name="c.name"
+          :icon="c.icon"
+          :link="c.link"/>
       </div>
     </div>
   </div>
@@ -152,11 +174,16 @@ export default {
 
 #knowledge {
   grid-area: b;
-
+  justify-self: center;
+  align-self: center;
 }
 
 #contacts {
   grid-area: c;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
 }
 .main {
   display: grid;
