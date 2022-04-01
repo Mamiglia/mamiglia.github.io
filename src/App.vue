@@ -45,24 +45,26 @@ export default {
 <template>
   <div class="root">
     <Sidemenu id="sidemenu"/>
-    <vue-horizontal reactive id="projects" class="horizontal" snap="center">
-      <Project v-for="p in projects" :key="p.title" 
-        :title="p.title" 
-        :image="p.image" 
-        :text="p.text" 
-        :link="p.link" 
-        :gitLink="p.gitLink"/>
-    </vue-horizontal>
-    <vue-horizontal reactive id="knowledge" class="horizontal">
-        <span v-for="i in 10">
-          <h3>{{i}}</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          </p>
-        </span>
-    </vue-horizontal>
-    <div id="contacts">
-
+    <div class="main">
+      <vue-horizontal reactive id="projects" class="horizontal" snap="center">
+        <Project v-for="p in projects" :key="p.title" 
+          :title="p.title" 
+          :image="p.image" 
+          :text="p.text" 
+          :link="p.link" 
+          :gitLink="p.gitLink"/>
+      </vue-horizontal>
+      <vue-horizontal reactive id="knowledge" class="horizontal">
+          <span v-for="i in 10">
+            <h3>{{i}}</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            </p>
+          </span>
+      </vue-horizontal>
+      <div id="contacts">
+  
+      </div>
     </div>
   </div>
    
@@ -71,8 +73,9 @@ export default {
 <style>
 @import './assets/base.css';
 #sidemenu {
-  height: 100%;
-  grid-area: side;
+  height: 100vh;
+  width: 30vw;
+  position: fixed;
 }
 
 .horizontal {
@@ -91,17 +94,19 @@ export default {
 #contacts {
   grid-area: c;
 }
-
+.main {
+  display: grid;
+  grid-template-areas: 
+    "a"
+    "b"
+    "c";
+  grid-template-columns: 100%;
+  grid-template-rows: 100vh  100vh 100vh;
+  margin-left: 33vw;
+}
 .root {
   margin: 0;
   width: 99vw;
   /* overflow-x: hidden; */
-  display: grid;
-  grid-template-areas: 
-    "side a a"
-    "side b b"
-    "side c c";
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 100vh  100vh 100vh;
 }
 </style>

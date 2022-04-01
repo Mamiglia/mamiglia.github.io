@@ -20,7 +20,6 @@ header {
     padding: 2rem;
     background-color: var(--color-background-mute);
     height: 100%;
-    width: 100%;
     text-align: right;
 }
 a {
