@@ -13,6 +13,7 @@
 
 <style scoped>
 header {
+    color: var(--accent);
     padding: 2em;
     padding-right: 0;
 }

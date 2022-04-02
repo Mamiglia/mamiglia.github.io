@@ -19,6 +19,10 @@
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+
+  --accent: #FE8529 ;
+  --accent-light: #ffb65a;
+  --accent-dark: #c55600;
 }
 
 /* semantic color variables for this project */
@@ -33,14 +37,12 @@
   --color-heading: var(--vt-c-text-light-1);
   --color-text: var(--vt-c-text-light-1);
 
-  --accent: #FE8529 ;
-  --accent-light: #ffb65a;
-  --accent-dark: #c55600;
+  --accent-2: var(--accent-dark);
 
   --section-gap: 160px;
 }
 
-  @media (prefers-color-scheme: dark) {
+  /* @media (prefers-color-scheme: dark) {
     :root {
       --color-background: var(--vt-c-black);
       --color-background-soft: var(--vt-c-black-soft);
@@ -51,8 +53,10 @@
 
       --color-heading: var(--vt-c-text-dark-1);
       --color-text: var(--vt-c-text-dark-2);
+
+      --accent-2: var(--accent-light);
     }
-  }
+  } */
 
 *,
 *::before,
@@ -65,8 +69,8 @@
 }
 
 *::selection {
-  background-color: var(--accent-light);
-  color: var(--color-text);
+  background-color: var(--accent);
+  color: var(--color-background);
 }
 
 body {
@@ -80,6 +84,10 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+a:hover {
+  color: var(--accent-2);
 }
 
 body, #app {

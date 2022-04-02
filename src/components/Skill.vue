@@ -40,6 +40,7 @@ h4, p {
     transition: max-height 2s ease;
     font-family: 'Courier New', Courier, monospace;
     padding-top: 1em;
+    color: var(--accent);
 
 }
 

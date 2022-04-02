@@ -34,6 +34,17 @@ export default {
     flex-direction: column;
     justify-content: center; */
 }
+h2::after {
+    height: 0.8em;
+    width: 50%;
+    background-color: var(--color-background-mute);
+    display: inline-block;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
 
 p {
     padding-top: 1em;
@@ -58,13 +69,13 @@ i {
     aspect-ratio: 1/1;
     text-decoration: none;
     margin-left: 1em;
-    color: var(--accent-light);
+    color: var(--accent);
 }
 a:visited {
-    color: var(--accent-light);
+    color: var(--accent);
 }
 a:hover {
-    color: var(--accent-dark);
+    color: var(--accent-2);
 }
 .links>a>*:hover {
     transform: scale(1.3);

@@ -24,7 +24,7 @@ a {
 
 a:hover {
     padding-bottom: 2em;
-    color: var(--accent-dark);
+    color: var(--accent-2);
 }
 
 </style>
