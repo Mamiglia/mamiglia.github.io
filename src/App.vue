@@ -159,23 +159,31 @@ export default {
   height: 100vh;
   width: 30vw;
   position: fixed;
+  z-index: 1;
 }
 
 .horizontal {
   width: 90%;
   padding-top: 10%;
+  margin-left: 5%;
   height: fit-content ;
   max-height: 100vw;
+
 }
 
 #projects {
   grid-area: a;
+  scroll-snap-align: start;
 }
 
 #knowledge {
+  padding-top: auto;
+  padding-bottom: auto;
   grid-area: b;
-  justify-self: center;
-  align-self: center;
+  height: fit-content;
+  /* justify-self: center; */
+  /* align-self: center; */
+  scroll-snap-align: start;
 }
 
 #contacts {
@@ -184,6 +192,7 @@ export default {
   align-items: center;
   justify-content: space-around;
   width: 100%;
+  scroll-snap-align: start;
 }
 .main {
   display: grid;
@@ -194,25 +203,47 @@ export default {
   grid-template-columns: 100%;
   grid-template-rows: 100vh  100vh 100vh;
   margin-left: 33vw;
+  max-width: 67vw;
+  overflow-x: hidden;
+
+  height: 100vh;
+  
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-snap-points-y: repeat(100vh);
 }
 .root {
   margin: 0;
-  width: 99vw;
-  /* overflow-x: hidden; */
+  width: 100vw;
+
+  height: 100vh;
+  overflow-x: hidden;
 }
 
 @media screen and (orientation:portrait) {
   .main {
     margin-left: 0;
+    margin-top: 20vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 3em;
+    width: 100vw;
+    max-width: 100vw;
   }
 
   #sidemenu {
-    position: static;
     width: 100vw;
+    max-height: 20vh;
   }
+
+  .main>* {
+    margin-left: 0;
+    max-width: 100vw;
+    max-height: 100%;
+  }
+
+
 }
 </style>
