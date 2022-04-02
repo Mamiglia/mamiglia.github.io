@@ -26,9 +26,9 @@ export default {
 
 <style scoped>
 .project{
-    width: 50vw;
+    max-width: 50vw;
     max-height: 80vh;
-    height: fit-content;
+    min-height: fit-content;
     margin: 10% 5% 5% 5%;
     /* display: flex;
     flex-direction: column;
@@ -75,8 +75,11 @@ h2 {
     color: var(--accent);
 }
 
-
-
-
+@media screen and (orientation:portrait) {
+    .project {
+        max-width: 75vw;
+        
+    }
+}
 
 </style>

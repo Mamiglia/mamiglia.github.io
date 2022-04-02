@@ -46,4 +46,14 @@ h4, p {
 .skill:hover>h4 {
     max-height: 500px;
 }
+
+@media screen and (orientation:portrait) {
+    .skill {
+        width: 30vw;
+    }
+
+    h4 {
+        max-height: 500px;
+    }
+}
 </style>

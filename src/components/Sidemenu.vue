@@ -57,4 +57,15 @@ li {
 ul {
     list-style: none;
 }
+
+@media screen and (orientation: portrait){
+    #sidemenu {
+        display: flex;
+        padding: 0;
+        justify-content: space-between;
+    }
+    ul {
+        padding-right: 2em;
+    }
+}
 </style>
