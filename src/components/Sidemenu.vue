@@ -1,5 +1,5 @@
 <template>
-    <div id="sidemenu">
+    <div class="sidemenu">
         <header>
             <h1>Matteo<br>Migliarini</h1>
         </header>
@@ -17,7 +17,7 @@ header {
     padding: 2em;
     padding-right: 0;
 }
-#sidemenu {
+.sidemenu {
     padding: 2rem;
     background-color: var(--color-background-mute);
     height: 100%;
@@ -26,7 +26,7 @@ header {
 a {
     text-decoration: none;
     color: var(--color-text);
-    transition: color .5s;
+    transition: color 1s;
 }
 a:hover {
     color: var(--accent);
@@ -51,7 +51,7 @@ a:hover::after {
 }
 
 li {
-    padding: 1rem 0 0 1rem;
+    padding-top: 1em;
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.3rem;
 }
@@ -60,13 +60,24 @@ ul {
 }
 
 @media screen and (orientation: portrait){
-    #sidemenu {
+    .sidemenu {
         display: flex;
         padding: 0;
         justify-content: space-between;
+        height: fit-content;
+        max-height: 20vh;
     }
     ul {
         padding-right: 2em;
+        padding-top: 1em;
+    }
+    li {
+        padding-top: .5em;
+    }
+    header {
+        text-align: left;
+        padding-top: 1em;
+        padding-bottom: 0%;
     }
 }
 </style>

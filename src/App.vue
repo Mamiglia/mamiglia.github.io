@@ -101,14 +101,14 @@ export default {
       ]),
       contacts: [
         {
-          name:"Github",
-          icon: "fa fa-github",
-          link: "https://github.com/Mamiglia"
-        },
-        {
           name: "Telegram",
           icon: "fa fa-telegram",
           link: "https://t.me/mamiglia"
+        },
+        {
+          name:"Github",
+          icon: "fa fa-github",
+          link: "https://github.com/Mamiglia"
         },
         {
           name: "Reddit",
@@ -190,7 +190,8 @@ export default {
   grid-area: c;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+
+  justify-content: center;
   width: 100%;
   scroll-snap-align: start;
 }
@@ -231,11 +232,12 @@ export default {
     gap: 3em;
     width: 100vw;
     max-width: 100vw;
+    scroll-snap-type: none;
   }
 
   #sidemenu {
     width: 100vw;
-    max-height: 20vh;
+
   }
 
   .main>* {
