@@ -1,2 +1,2 @@
 # mamiglia.github.io
-My personal Website, and the first website i ever created  
+Built in Vue.js and reactive CSS. The website has modern design and high responsiveness, includes dark and light modes!

@@ -5,6 +5,7 @@ import Project from "./components/Project.vue";
 import Skill from "./components/Skill.vue";
 import Contact from './components/Contact.vue';
 
+
 function shuffleArray(array) {
     for (var i = array.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
@@ -37,65 +38,65 @@ export default {
         {
           title: "Meravigliosi Automi",
           image: "",
-          text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          text: "This website makes it easy to create and edit Finite States Automaton, allowing one to develop a deeper understanding of the theory behind FSA and Acceptors.The website is built to be easy to use, even for beginners, targeting mainly Computer Science students. The technologies used are mainly Vue.js and responsive CSS, following most modern web-dev practices.",
           link: "https://mamiglia.github.io/meravigliosi-automi",
           gitLink: "https://github.com/Mamiglia/meravigliosi-automi"
         },
         {
           title: "this.",
           image: "",
-          text: "This same site is one of my projects. Built in Vue js.",
+          text: "This same site is one of my projects. Built in Vue.js and reactive CSS. The website has modern design and high responsiveness, includes dark and light modes!",
           gitLink: "https://github.com/Mamiglia/mamiglia.github.io"
         }
       ],
       skills: shuffleArray([
         {
           title: "JavaScript",
-          img: "../../data/images/js.svg"
+          img: "src/assets/images/js.svg"
         },
         {
           title: "Java",
-          img: "../../data/images/java.svg"
+          img: "src/assets/images/java.svg"
         },
         {
           title: "C",
-          img: "../../data/images/c.svg"
+          img: "src/assets/images/c.svg"
         },
         {
           title: "Java Spring",
-          img: "../../data/images/javaspring.svg"
+          img: "src/assets/images/javaspring.svg"
         },
         {
           title: "Kotlin",
-          img: "../../data/images/kotlin.svg"
+          img: "src/assets/images/kotlin.svg"
         },
         {
           title: "PostgreSQL",
-          img: "../../data/images/postgres.svg"
+          img: "src/assets/images/postgres.svg"
         },
         {
           title: "CSS",
-          img: "../../data/images/css.svg"
+          img: "src/assets/images/css.svg"
         },
         {
           title: "HTML",
-          img: "../../data/images/html.svg"
+          img: "src/assets/images/html.svg"
         },
         {
           title: "Vue.js",
-          img: "../../data/images/vue.svg"
+          img: "src/assets/images/vue.svg"
         },
         {
           title: "Python",
-          img: "../../data/images/python.svg"
+          img: "src/assets/images/python.svg"
         },
         {
           title: "Bash",
-          img: "../../data/images/bash.svg"
+          img: "src/assets/images/bash.svg"
         },
         {
           title: "prolog",
-          img: "../../data/images/prolog.svg"
+          img: "src/assets/images/prolog.svg"
         }
         
       ]),
