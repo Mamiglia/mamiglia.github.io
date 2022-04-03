@@ -57,6 +57,7 @@ li {
 }
 ul {
     list-style: none;
+    height: fit-content;
 }
 
 @media screen and (orientation: portrait){
@@ -66,15 +67,18 @@ ul {
         justify-content: space-between;
         height: fit-content;
         max-height: 20vh;
+        
     }
     ul {
-        padding-right: 2em;
-        padding-top: 1em;
+        padding: 1em;
     }
     li {
-        padding-top: .5em;
+        padding-top: 0em;
+        padding-bottom: .5em;
+        font-size: 1.1em;
     }
     header {
+        height: fit-content;
         text-align: left;
         padding-top: 1em;
         padding-bottom: 0%;

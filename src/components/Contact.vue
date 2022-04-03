@@ -18,13 +18,14 @@ a {
     text-decoration: none;
     color: var(--accent);
     font-size: 3em;
-    transition: padding 1s ease, color 1s ease;
+    transition: padding .5s ease, color .5s ease, transform .5s ease;
 
 }
 
 a:hover {
     padding-bottom: 2em;
     color: var(--accent-2);
+    transform: scale(1.2);
 }
 
 </style>
