@@ -168,7 +168,7 @@ export default {
   padding-top: 10%;
   margin-left: 5%;
   height: fit-content ;
-  max-height: 100vw;
+  max-height: 100vh;
 
 }
 
@@ -238,7 +238,7 @@ export default {
 
   #sidemenu {
     width: 100vw;
-
+    height: fit-content;
   }
 
   .main>* {

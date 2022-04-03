@@ -26,17 +26,18 @@ export default {
 
 <style scoped>
 .project{
-    max-width: 50vw;
-    max-height: 80vh;
-    min-height: fit-content;
-    margin: 10% 5% 5% 5%;
+    height: 100%;
+    margin: 0 5% 5% 5%;
     /* display: flex;
     flex-direction: column;
     justify-content: center; */
+    max-width: 50vw;
+    min-width: 30vw;
 }
 h2::after {
+    /*fat underline effect*/
     height: 0.8em;
-    width: 50%;
+    width: 40%;
     background-color: var(--color-background-mute);
     display: inline-block;
     content: "";
@@ -88,7 +89,7 @@ h2 {
 
 @media screen and (orientation:portrait) {
     .project {
-        max-width: 75vw;
+        max-width: 85vw;
         
     }
 }
