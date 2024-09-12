@@ -29,18 +29,36 @@ export default {
     return {
       projects : [
         {
-          title: "Reddit-Wallpaper",
+          title: "Mergecraft",
           image: "",
-          text: "Bored by your old static wallpaper? Want to see something new? Well my boy this is the right place for you. This magnificent tool automatically downloads and sets up a wallpaper from the website reddit! It allows you to decide the period of time after you get bored by a wallpaper and changes it, and you won't need to move a single muscle. Best thing of all, it applies wallpapers using a non-repetitive pattern - meaning that it's unlikely that you will ever see the same wallpaper twice. And it has so many more settings to customize!",
-          link: "https://github.com/Mamiglia/Reddit-Wallpaper/releases/latest",
-          gitLink: "https://github.com/Mamiglia/Reddit-Wallpaper"
+          text: " A simple library to streamline model merging operations, with seamless integration with HuggingFace🤗. The library implements many merging methods such as Isotropic, Fisher, TIES, DARE etc... Also, Mergecraft has a modular and functional approach, allowing one to easily extend it with novel merging methods.",
+          gitLink: "https://github.com/Mamiglia/mergecraft",
+        },
+        // {
+        //   title: "SeRpEnt",
+        //   image: "",
+        //   text: "Selective Resampling for ",
+        //   gitLink: "",
+        // },
+        {
+          title: "Bayesian NN × Human Pose Forecasting",
+          image: "",
+          text: "",
+          gitLink: "The goal of this model is to predict human poses in dynamic scenarios, such as human-robot interaction and autonomous driving, while accounting for uncertainty. The model has been trained using the Human3.6M dataset and uses a Space-Time Graph Convolutional Network to address the complexities of the movement forecasting. Thanks to the Bayesian approach, we're able to estimate the uncertainty of the prediction, allowing for risk estimation and cautios approach when deploying such models in the proximity of humans.",
         },
         {
           title: "Meravigliosi Automi",
           image: "",
-          text: "This website makes it easy to create and edit Finite States Automaton, allowing one to develop a deeper understanding of the theory behind FSA and Acceptors.The website is built to be easy to use, even for beginners, targeting mainly Computer Science students. The technologies used are mainly Vue.js and responsive CSS, following most modern web-dev practices.",
+          text: "A website that makes it easy to create and edit Finite States Automaton, allowing one to develop a deeper understanding of the theory behind FSA and Acceptors. The website is built to be easy to use, even for beginners, targeting mainly Computer Science students. The technologies used are mainly Vue.js and responsive CSS, following most modern web-dev practices.",
           link: "https://mamiglia.github.io/meravigliosi-automi",
           gitLink: "https://github.com/Mamiglia/meravigliosi-automi"
+        },
+        {
+          title: "Reddit-Wallpaper",
+          image: "",
+          text: "Bored by your old static wallpaper? Want to see something new? Well my boy this is the right place for you. This tool automatically downloads and sets up a wallpaper from the website reddit! It allows you to decide the period of time after you get bored by a wallpaper and changes it, and you won't need to move a single muscle. Best thing of all, it applies wallpapers using a non-repetitive pattern - meaning that it's unlikely that you will ever see the same wallpaper twice. And it has so many more settings to customize!",
+          link: "https://github.com/Mamiglia/Reddit-Wallpaper/releases/latest",
+          gitLink: "https://github.com/Mamiglia/Reddit-Wallpaper"
         },
         {
           title: "this.",
