@@ -12,7 +12,7 @@
 
 <script setup lang="ts">
 import { defineComponent } from 'vue';
-import Sidebar from './Sidebar.vue';
+import Sidebar from '../components/Sidebar.vue';
 
 import { ref, onMounted } from 'vue';
 import axios from 'axios';

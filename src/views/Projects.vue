@@ -11,8 +11,8 @@
 </template>
 
 <script setup lang="ts">
-import Sidebar from './Sidebar.vue';
-import ProjectCard from './ProjectCard.vue';
+import Sidebar from '../components/Sidebar.vue';
+import ProjectCard from '../components/ProjectCard.vue';
 
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
