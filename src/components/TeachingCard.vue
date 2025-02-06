@@ -6,19 +6,21 @@
     </div>
     <div class="teaching-details">
     <div class="teaching-place">
-        <span class="material-symbols-outlined">pin_drop</span>
+        <svg-icon type="mdi" :path="mdiSchool"></svg-icon>
         <p>{{ teaching.place }}</p>
     </div>
     <p class="teaching-description">{{ teaching.description }}</p>
     </div>
     <a :href="teaching.link" target="_blank" class="teaching-link" aria-label="Teaching link">
-    <span class="material-symbols-outlined">link</span>
+    <svg-icon type="mdi" :path="mdiLink"></svg-icon>
     </a>
 </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
+import SvgIcon from '@jamescoyle/vue-icon';
+import { mdiSchool, mdiLink } from '@mdi/js';
+
 
 defineProps({
 teaching: {
@@ -83,15 +85,10 @@ opacity: 0.9;
 
 .teaching-link {
 position: absolute;
-bottom: 12px;
+bottom: 4px;
 right: 12px;
-display: flex;
 align-items: center;
 justify-content: center;
-background: transparent;
-border-radius: 50%;
-width: 28px;
-height: 28px;
 color: #d96d00;
 transition: color 0.2s ease-in-out;
 }

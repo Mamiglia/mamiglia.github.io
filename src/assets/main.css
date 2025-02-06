@@ -4,7 +4,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
+  cursor: none;
+
 }
 ::selection {
   background: #333;
@@ -23,13 +24,6 @@ a {
 a.social {
   color: #666;
 }
-
-a.social:hover {
-  color: #333;
-  font-size: 2em;
-  transition: font-size 0.5s;
-}
-
 
 @media (min-width: 1024px) {
   body {

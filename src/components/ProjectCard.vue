@@ -4,7 +4,7 @@
     <p>{{ project.description }}</p>
     <div class="links">
       <a v-for="link in project.links" :key="link" :href="link" target="_blank">
-        <font-awesome-icon :icon="getIcon(link)" />
+        <svg-icon :path="getIcon(link)" />
       </a>
     </div>
   </div>
@@ -12,7 +12,8 @@
 
 <script setup lang="ts">
 import { defineProps } from 'vue';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import SvgIcon from '@jamescoyle/vue-icon';
+import { mdiGit, mdiLink, mdiStickerTextOutline } from '@mdi/js';
 
 const props = defineProps({
   project: {
@@ -23,11 +24,11 @@ const props = defineProps({
 
 const getIcon = (link: string) => {
   if (link.includes('github.com')) {
-    return ['fab', 'github'];
+    return mdiGit;
   } else if (link.includes('arxiv')) {
-    return ['fas', 'file-alt'];
+    return mdiStickerTextOutline;
   } else {
-    return ['fas', 'link'];
+    return mdiLink;
   }
 };
 </script>
@@ -69,7 +70,6 @@ const getIcon = (link: string) => {
   bottom: 10px;
   right: 10px;
   display: flex;
-  gap: 8px;
 }
 
 .links a {
@@ -88,13 +88,13 @@ const getIcon = (link: string) => {
   transform: scale(1.1);
 }
 
-.links a svg {
+.links a .material-icons {
   font-size: 1.1rem;
   color: #FF8800;
   transition: color 0.3s ease;
 }
 
-.links a:hover svg {
+.links a:hover .material-icons {
   color: white;
 }
 </style>

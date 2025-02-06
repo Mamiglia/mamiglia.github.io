@@ -2,6 +2,7 @@ projects:
   - title: "SeRpEnt"
     description: "We propose Selective Resampling for Expressive State Space Models, a State Space Model that enhances Mamba’s selective mechanism with resampling to compress sequences efficiently. Our approach improves Long Range Arena performance and boosts language modeling accuracy, demonstrating the benefits of selective resampling. Accepted at ICML 2024 Workshop: Next Generation of Sequence Modeling."
     links:
+      - https://arxiv.org/abs/2501.11729
       - https://sites.google.com/view/ngsmworkshop/accepted-papers
   - title: "Mergecraft"
     description: " a Python library designed to simplify the process of merging machine learning models, enabling data scientists to combine the strengths of fine-tuned models without the need for retraining. By providing a flexible interface and supporting various merging techniques like TIES, SLERP, and DARE, Mergecraft allows users to explore and experiment with novel strategies. It integrates seamlessly with Hugging Face models and supports the development of custom merging methods, offering a more efficient alternative to traditional model ensembles."
