@@ -1,0 +1,25 @@
+projects:
+  - title: "Selective Resampling for Expressive State Space Models"
+    description: "We propose SeRpEnt, a State Space Model that enhances Mamba’s selective mechanism with resampling to compress sequences efficiently. Our approach improves Long Range Arena performance and boosts language modeling accuracy, demonstrating the benefits of selective resampling. Accepted at ICML 2024 Workshop: Next Generation of Sequence Modeling."
+    links:
+      - https://sites.google.com/view/ngsmworkshop/accepted-papers
+  - title: "Mergecraft"
+    description: " a Python library designed to simplify the process of merging machine learning models, enabling data scientists to combine the strengths of fine-tuned models without the need for retraining. By providing a flexible interface and supporting various merging techniques like TIES, SLERP, and DARE, Mergecraft allows users to explore and experiment with novel strategies. It integrates seamlessly with Hugging Face models and supports the development of custom merging methods, offering a more efficient alternative to traditional model ensembles."
+    links:
+      - https://mamiglia.notion.site/Mergecraft-6decfd9415314eaf8dc5e68c078ffe6e
+      - https://github.com/Mamiglia/Mergecraft
+  - title: "Bayesian NN × Human Pose Forecasting"
+    description: "The goal of this model is to predict human poses in dynamic scenarios, such as human-robot interaction and autonomous driving, while accounting for uncertainty. The model has been trained using the Human3.6M dataset and uses a Space-Time Graph Convolutional Network to address the complexities of the movement forecasting. Thanks to the Bayesian approach, we're able to estimate the uncertainty of the prediction, allowing for risk estimation and cautios approach when deploying such models in the proximity of humans."
+    links:
+      - https://github.com/Mamiglia/BNN_Human_motion
+  - title: "Reddit Wallpaper"
+    description: "A dynamic wallpaper changer that automatically downloads and sets wallpapers from Reddit based on user-defined preferences. Featuring a non-repetitive selection algorithm, it ensures fresh backgrounds without repeats. With an easy installation, a GUI for customization, system tray support, and resolution filtering, it runs seamlessly in the background. Originally written in Java and later migrated to Kotlin, this project enhanced my skills in codebase management and API integration."
+    links: 
+      - https://github.com/Mamiglia/Reddit-Wallpaper
+  - title: Finite States Automaton.web
+    description: "A website that makes it easy to create and edit Finite States Automaton, allowing one to develop a deeper understanding of the theory behind FSA and Acceptors. The website is built to be easy to use, even for beginners, targeting mainly Computer Science students. The technologies used are mainly Vue.js and responsive CSS, following most modern web-dev practices."
+    links:
+      - https://mamiglia.github.io/meravigliosi-automi
+      - https://github.com/Mamiglia/meravigliosi-automi
+  
+      
