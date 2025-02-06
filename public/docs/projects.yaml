@@ -1,6 +1,6 @@
 projects:
-  - title: "Selective Resampling for Expressive State Space Models"
-    description: "We propose SeRpEnt, a State Space Model that enhances Mamba’s selective mechanism with resampling to compress sequences efficiently. Our approach improves Long Range Arena performance and boosts language modeling accuracy, demonstrating the benefits of selective resampling. Accepted at ICML 2024 Workshop: Next Generation of Sequence Modeling."
+  - title: "SeRpEnt"
+    description: "We propose Selective Resampling for Expressive State Space Models, a State Space Model that enhances Mamba’s selective mechanism with resampling to compress sequences efficiently. Our approach improves Long Range Arena performance and boosts language modeling accuracy, demonstrating the benefits of selective resampling. Accepted at ICML 2024 Workshop: Next Generation of Sequence Modeling."
     links:
       - https://sites.google.com/view/ngsmworkshop/accepted-papers
   - title: "Mergecraft"
