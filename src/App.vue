@@ -1,6 +1,4 @@
 <template>
-
-
     <!-- Footbar (appears after 2s) -->
     <transition name="fade">
       <div class="footbar" v-if="showFootbar">
@@ -15,14 +13,20 @@
       </div>
     </transition>
     <img :style="fingerStyle" src="@/assets/finger.png" class="finger-image" />
-
-  <RouterView />
-
-  <!-- <cursor-fx /> -->
+    <RouterView />
+    <custom-cursor
+      :targets="['img', 'a', 'button', 'svg', 'hoverable']"
+      :circleColor="'#666'"
+      :circleColorHover="'#2f2f2f'"
+      :dotColor="'#333'"
+      :dotColorHover="'lightgray'"
+      :hoverSize="3"
+    ></custom-cursor>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import CustomCursor from "./components/CustomCursor.vue";
 
 const showFootbar = ref(false);
 
@@ -33,10 +37,8 @@ setTimeout(() => {
 const fingerStyle = ref({});
 
 const showFinger = (event: MouseEvent) => {
-  console.log('Finger time')
   const target = event.target as HTMLElement;
   const rect = target.getBoundingClientRect();
-  console.log(rect);
   const angle = Math.random() > 0.5 ? 'rotate(-10deg)' : 'rotate(10deg)';
   fingerStyle.value = {
     left: `${rect.left + rect.width / 2 - 25}px`,
@@ -107,7 +109,7 @@ width: 100vw;
 }
 
 .footbar {
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   width: 100%;
   opacity: 0;
