@@ -20,7 +20,7 @@ import axios from 'axios';
 const bioText = ref('');
 
 onMounted(async () => {
-    const response = await axios.get('/public/docs/bio.md');
+    const response = await axios.get('/docs/bio.md');
     bioText.value = response.data;
 });
 

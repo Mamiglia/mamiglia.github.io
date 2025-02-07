@@ -31,7 +31,7 @@ interface Teaching {
 const teachings = ref<Teaching[]>([]);
 
 onMounted(async () => {
-    const response = await axios.get('/public/docs/teachings.yaml');
+    const response = await axios.get('/docs/teachings.yaml');
     teachings.value = yaml.load(response.data).teachings;
 });
 
