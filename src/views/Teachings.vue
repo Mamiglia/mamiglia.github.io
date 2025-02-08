@@ -68,4 +68,11 @@ defineComponent({
   flex-direction: column;
   gap: 16px;
 }
+
+@media (max-width: 768px) {
+  .content {
+    max-width: 95vw;
+    padding: 10px;
+  }
+}
 </style>

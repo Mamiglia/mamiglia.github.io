@@ -3,12 +3,10 @@
     <transition name="fade">
       <div class="footbar" v-if="showFootbar">
         <nav>
-          <ul>
             <RouterLink class="hoverable" to="/projects" @mouseover="showFinger" @mouseleave="hideFinger">Projects</RouterLink>
             <RouterLink class="hoverable" to="/teachings" @mouseover="showFinger" @mouseleave="hideFinger">Teachings</RouterLink>
             <RouterLink class="hoverable" to="/bio" @mouseover="showFinger" @mouseleave="hideFinger">Bio</RouterLink>
             <a class="hoverable" href="/notes" target="_blank" @mouseover="showFinger" @mouseleave="hideFinger">Notes</a>
-          </ul>
         </nav>
       </div>
     </transition>
@@ -122,6 +120,14 @@ width: 100vw;
   justify-content: center;
 }
 
+@media (max-width: 768px) {
+  .footbar nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
 .footbar nav ul li {
   margin: 0 15px;
 }
@@ -163,5 +169,13 @@ a.hoverable {
   bottom: -100vh;
   transform: translateY(100px);
   pointer-events: none;
+}
+
+@media (orientation: portrait) {
+  .page {
+
+    flex-direction: column;
+  }
+  
 }
 </style>

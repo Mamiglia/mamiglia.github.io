@@ -54,7 +54,14 @@ onMounted(async () => {
 
 @media (max-width: 768px) {
   .projects-grid {
-    column-count: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    column-count: unset;
+  }
+
+  .content {
+    max-width: 100vw;
   }
 }
 

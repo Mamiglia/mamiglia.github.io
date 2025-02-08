@@ -38,4 +38,12 @@ defineComponent({
     padding: 0em;
     max-width: 40em;
 }
+
+@media (orientation: portrait) {
+    .content {
+        max-width: 100vw;
+        padding: 0em 2em;
+    }
+
+}
 </style>

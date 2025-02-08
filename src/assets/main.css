@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  cursor: none;
+  /* cursor: none; */
 
 }
 ::selection {
@@ -35,5 +35,22 @@ a.social {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 0;
+  }
+}
+
+@media (orientation: portrait) {
+  #app {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  body, html, #app {
+    width: 100vw;
+    height: auto;
+  }
+
+  .content {
+    margin-top: 0 !important;
+    padding:2em !important;
   }
 }
