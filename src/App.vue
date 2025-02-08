@@ -14,14 +14,14 @@
     </transition>
     <img :style="fingerStyle" src="@/assets/finger.png" class="finger-image" />
     <RouterView />
-    <custom-cursor
+    <!-- <custom-cursor
       :targets="['img', 'a', 'button', 'svg', 'hoverable']"
       :circleColor="'#666'"
       :circleColorHover="'#2f2f2f'"
       :dotColor="'#333'"
       :dotColorHover="'lightgray'"
       :hoverSize="3"
-    ></custom-cursor>
+    ></custom-cursor> -->
 </template>
 
 <script setup lang="ts">
