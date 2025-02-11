@@ -128,20 +128,6 @@ width: 100vw;
   }
 }
 
-.footbar nav ul li {
-  margin: 0 15px;
-}
-
-.footbar nav ul li a {
-  text-decoration: none;
-  color: black;
-  transition: all 0.3s ease;
-}
-
-.footbar nav ul li a:hover {
-  color: #FF8800;
-  text-decoration: underline;
-}
 
 @keyframes fadeIn {
   to {
@@ -169,6 +155,12 @@ a.hoverable {
   bottom: -100vh;
   transform: translateY(100px);
   pointer-events: none;
+}
+
+.footbar nav a {
+  font-size: 1rem;
+  color: #666;
+  transition: all 0.3s ease;
 }
 
 @media (orientation: portrait) {

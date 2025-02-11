@@ -21,7 +21,6 @@
 import SvgIcon from '@jamescoyle/vue-icon';
 import { mdiSchool, mdiLink } from '@mdi/js';
 
-
 defineProps({
 teaching: {
     type: Object,
@@ -67,7 +66,6 @@ opacity: 0.85;
 font-size: 0.9rem;
 color: #d96d00;
 display: flex;
-align-items: center;
 gap: 6px;
 font-weight: 500;
 }

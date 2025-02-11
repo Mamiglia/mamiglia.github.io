@@ -13,14 +13,15 @@ projects:
     description: "The goal of this model is to predict human poses in dynamic scenarios, such as human-robot interaction and autonomous driving, while accounting for uncertainty. The model has been trained using the Human3.6M dataset and uses a Space-Time Graph Convolutional Network to address the complexities of the movement forecasting. Thanks to the Bayesian approach, we're able to estimate the uncertainty of the prediction, allowing for risk estimation and cautios approach when deploying such models in the proximity of humans."
     links:
       - https://github.com/Mamiglia/BNN_Human_motion
-  - title: "Reddit Wallpaper"
-    description: "A dynamic wallpaper changer that automatically downloads and sets wallpapers from Reddit based on user-defined preferences. Featuring a non-repetitive selection algorithm, it ensures fresh backgrounds without repeats. With an easy installation, a GUI for customization, system tray support, and resolution filtering, it runs seamlessly in the background. Originally written in Java and later migrated to Kotlin, this project enhanced my skills in codebase management and API integration."
-    links: 
-      - https://github.com/Mamiglia/Reddit-Wallpaper
   - title: Finite States Automaton.web
     description: "A website that makes it easy to create and edit Finite States Automaton, allowing one to develop a deeper understanding of the theory behind FSA and Acceptors. The website is built to be easy to use, even for beginners, targeting mainly Computer Science students. The technologies used are mainly Vue.js and responsive CSS, following most modern web-dev practices."
     links:
       - https://mamiglia.github.io/meravigliosi-automi
       - https://github.com/Mamiglia/meravigliosi-automi
+  - title: "Reddit Wallpaper"
+    description: "A dynamic wallpaper changer that automatically downloads and sets wallpapers from Reddit based on user-defined preferences. Featuring a non-repetitive selection algorithm, it ensures fresh backgrounds without repeats. With an easy installation, a GUI for customization, system tray support, and resolution filtering, it runs seamlessly in the background. Originally written in Java and later migrated to Kotlin, this project enhanced my skills in codebase management and API integration."
+    links: 
+      - https://github.com/Mamiglia/Reddit-Wallpaper
+
   
       
