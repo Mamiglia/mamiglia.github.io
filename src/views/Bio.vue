@@ -1,27 +1,26 @@
-<template>
-<div class="page">
-    <Sidebar />
-    <div class="content">
-    <h1>Bio</h1>
-    <p>
-        {{ bioText }}
-    </p>
-    </div>
-</div>
-</template>
-
 <script setup lang="ts">
 import { defineComponent } from 'vue';
 import Sidebar from '../components/Sidebar.vue';
+import Game from '../components/Game.vue';
 
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
 
-const bioText = ref('');
+import VueTypewriterEffect from "vue-typewriter-effect";
 
+const bioText = ref([]);
+
+
+function add() {
+    console.log('add');
+}
+
+function remove() {
+    console.log('remove');
+}
 onMounted(async () => {
     const response = await axios.get('/docs/bio.md');
-    bioText.value = response.data;
+    bioText.value = response.data.split('\n');
 });
 
 defineComponent({
@@ -32,11 +31,28 @@ defineComponent({
 });
 </script>
 
+<template>
+    <div class="page">
+        <Sidebar />
+        <div class="content">
+        <h1>Bio</h1>
+        <vue-typewriter-effect
+          v-if="bioText.length"
+          :strings="bioText"
+          :autoStart="true"
+          :delay="25"
+        />
+        </div>
+        <Game />
+
+    </div>
+</template>
+
 <style scoped>
 
-.content p {
-    padding: 0em;
+.content {
     max-width: 40em;
+    color: #333;
 }
 
 @media (orientation: portrait) {
