@@ -53,4 +53,8 @@ a.social {
     margin-top: 0 !important;
     padding:2em !important;
   }
+
+  :root {
+    font-size: 1.2em;
+  }
 }

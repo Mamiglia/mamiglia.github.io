@@ -5,11 +5,11 @@
   </h1>
   <p class="subtitle">{{ displayedTitle }}</p>
   <div class="links">
-    <a class="social" href="https://github.com/yourusername" target="_blank">
-      <font-awesome-icon :icon="['fab', 'github']" />
+    <a class="social" href="https://github.com/mamiglia" target="_blank">
+      <svg-icon type="mdi" :path="mdiGithub"></svg-icon>
     </a>
-    <a class="social" href="https://www.linkedin.com/in/yourusername" target="_blank">
-      <font-awesome-icon :icon="['fab', 'linkedin']" />
+    <a class="social" href="https://www.linkedin.com/in/mamiglia" target="_blank">
+      <svg-icon type="mdi" :path="mdiLinkedin"></svg-icon>
     </a>
     <!-- Add more links as needed -->
   </div>
@@ -18,11 +18,8 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-
-library.add(faGithub, faLinkedin);
+import SvgIcon from '@jamescoyle/vue-icon';
+import { mdiGithub, mdiLinkedin } from '@mdi/js';
 
 const titles = ["AI Researcher", "Computer Engineer", "Data Scientist"];
 const displayedTitle = ref("");
@@ -101,6 +98,7 @@ body, html, #app {
 .landing h1 {
   font-size: 3rem;
   height: 4rem;
+  line-height: 1em;
 }
 
 .bold {
@@ -122,12 +120,42 @@ body, html, #app {
   transition: all 0.3s ease;
 }
 
+.social svg {
+  width: 2rem;
+  height: 2rem;
+}
+
 .links a:hover {
   color: #FF8800;
 }
 
 .links {
   margin-top: 1em;
+}
+
+@media (orientation: portrait) {
+  .landing h1 {
+    /* font-size: 3.5rem; */
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  /* .subtitle {
+    font-size: 1.4rem;
+    /* height: 1em; */
+  /* } */
+
+
+
+  .social svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  } 
+
+
+  
 }
 
 

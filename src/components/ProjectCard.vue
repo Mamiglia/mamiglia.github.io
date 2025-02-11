@@ -4,18 +4,17 @@
     <p>{{ project.description }}</p>
     <div class="links">
       <a v-for="link in project.links" :key="link" :href="link" target="_blank">
-        <svg-icon :path="getIcon(link)" />
+        <svg-icon type="mdi" :path="getIcon(link)"></svg-icon>
       </a>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
 import SvgIcon from '@jamescoyle/vue-icon';
 import { mdiGit, mdiLink, mdiStickerTextOutline } from '@mdi/js';
 
-const props = defineProps({
+defineProps({
   project: {
     type: Object,
     required: true
@@ -88,13 +87,13 @@ const getIcon = (link: string) => {
   transform: scale(1.1);
 }
 
-.links a .material-icons {
+.links a svg {
   font-size: 1.1rem;
   color: #FF8800;
   transition: color 0.3s ease;
 }
 
-.links a:hover .material-icons {
+.links a:hover svg {
   color: white;
 }
 </style>
