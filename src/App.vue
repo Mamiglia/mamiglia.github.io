@@ -12,20 +12,10 @@
     </transition>
     <img :style="fingerStyle" src="@/assets/finger.png" class="finger-image" />
     <RouterView />
-    <!-- <custom-cursor
-      :targets="['img', 'a', 'button', 'svg', 'hoverable']"
-      :circleColor="'#666'"
-      :circleColorHover="'#2f2f2f'"
-      :dotColor="'#333'"
-      :dotColorHover="'lightgray'"
-      :hoverSize="3"
-    ></custom-cursor> -->
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import CustomCursor from "./components/CustomCursor.vue";
-
 const showFootbar = ref(false);
 
 setTimeout(() => {
@@ -114,18 +104,10 @@ width: 100vw;
   animation: fadeIn 2.5s forwards 2s;
 }
 
-.footbar nav ul {
+.footbar nav {
   list-style: none;
   display: flex;
   justify-content: center;
-}
-
-@media (max-width: 768px) {
-  .footbar nav {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
 }
 
 
@@ -167,6 +149,10 @@ a.hoverable {
   .page {
 
     flex-direction: column;
+  }
+
+  .footbar {
+    display: none;
   }
   
 }

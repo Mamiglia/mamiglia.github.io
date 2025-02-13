@@ -99,4 +99,13 @@ transition: color 0.2s ease-in-out;
 .teaching-link:hover {
 color: #b35600;
 }
+
+@media (orientation: portrait) {
+.teaching-card {
+    border-left: none;
+    border-top: 4px solid #d96d00;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+}
 </style>

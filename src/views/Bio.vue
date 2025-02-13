@@ -55,6 +55,7 @@ defineComponent({
 .content {
     max-width: 40em;
     color: #333;
+    font-size: 1rem;
 }
 
 @media (orientation: portrait) {
