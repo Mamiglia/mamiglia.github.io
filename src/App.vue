@@ -1,12 +1,12 @@
 <template>
     <!-- Footbar (appears after 2s) -->
     <transition name="fade">
-      <div class="footbar" v-if="showFootbar">
+      <div class="footbar" v-if="showFootbar && $route.path === '/'">
         <nav>
-            <RouterLink class="hoverable" to="/projects" @mouseover="showFinger" @mouseleave="hideFinger">Projects</RouterLink>
-            <RouterLink class="hoverable" to="/teachings" @mouseover="showFinger" @mouseleave="hideFinger">Teachings</RouterLink>
-            <RouterLink class="hoverable" to="/bio" @mouseover="showFinger" @mouseleave="hideFinger">Bio</RouterLink>
-            <a class="hoverable" href="/notes" target="_blank" @mouseover="showFinger" @mouseleave="hideFinger">Notes</a>
+        <RouterLink class="hoverable" to="/projects" @mouseover="showFinger" @mouseleave="hideFinger">Projects</RouterLink>
+        <RouterLink class="hoverable" to="/teachings" @mouseover="showFinger" @mouseleave="hideFinger">Teachings</RouterLink>
+        <RouterLink class="hoverable" to="/bio" @mouseover="showFinger" @mouseleave="hideFinger">Bio</RouterLink>
+        <a class="hoverable" href="/notes" target="_blank" @mouseover="showFinger" @mouseleave="hideFinger">Notes</a>
         </nav>
       </div>
     </transition>
@@ -152,6 +152,25 @@ a.hoverable {
   }
 
   .footbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    opacity: 0;
+    animation: fadeIn 2.5s forwards 2s;
+  }
+
+  .footbar nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    justify-items: center;
+  }
+  
+  .footbar nav a {
+    margin: 0;
+  }
+
+  img {
     display: none;
   }
   
