@@ -124,7 +124,7 @@ color: #666;
     margin: 0;
   }
     h1 {
-        font-size: 2rem;
+        font-size: 1.7rem;
         margin: 0;
     }
   .sidebar-content {
