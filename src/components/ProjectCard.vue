@@ -75,8 +75,8 @@ const getIcon = (link: string) => {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
   background: rgba(255, 136, 0, 0.2);
   border-radius: 50%;
   transition: background 0.3s ease, transform 0.2s ease;
@@ -88,7 +88,8 @@ const getIcon = (link: string) => {
 }
 
 .links a svg {
-  font-size: 1.1rem;
+  width: 1.5rem;
+  height: 1.5rem;
   color: #FF8800;
   transition: color 0.3s ease;
 }

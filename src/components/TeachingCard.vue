@@ -91,6 +91,11 @@ color: #d96d00;
 transition: color 0.2s ease-in-out;
 }
 
+.teaching-link svg {
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
 .teaching-link:hover {
 color: #b35600;
 }

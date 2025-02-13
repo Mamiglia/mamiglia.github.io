@@ -49,14 +49,13 @@ onMounted(async () => {
 
 .projects-grid {
   column-count: 2;
-  column-gap: 1rem;
+  column-gap: 1em;
 }
 
 @media (max-width: 768px) {
   .projects-grid {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
     column-count: unset;
   }
 
