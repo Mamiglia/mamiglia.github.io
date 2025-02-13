@@ -96,7 +96,7 @@ body, html, #app {
 }
 
 .landing h1 {
-  font-size: 3rem;
+  font-size: 2.7rem;
   height: 4rem;
   line-height: 1em;
 }

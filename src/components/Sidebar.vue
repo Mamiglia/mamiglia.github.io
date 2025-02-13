@@ -90,7 +90,7 @@ align-items: center;
 }
 
 h1 {
-font-size: 3rem;
+font-size: 2.7rem;
 margin-bottom: 20px;
 }
 
@@ -124,7 +124,7 @@ color: #666;
     margin: 0;
   }
     h1 {
-        font-size: 1.7rem;
+        font-size: 1.4rem;
         margin: 0;
     }
   .sidebar-content {
