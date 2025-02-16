@@ -2,7 +2,7 @@
 <div class="sidebar">
     <div class="sidebar-content">
         <RouterLink class="hoverable" to="/"><h1>
-        {{ isPortrait.value?'Matteo':'M.' }} <span class="bold">Migliarini</span>
+        {{ displayName }} <span class="bold">Migliarini</span>
         </h1>
         </RouterLink>
     <div class="social-buttons">
@@ -36,12 +36,13 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { ref, onMounted, onBeforeUnmount, type Ref } from 'vue';
+import { ref, onMounted, onBeforeUnmount, type Ref, computed } from 'vue';
 
 library.add(faGithub, faLinkedin, faBars);
 
 const showMenu = ref(false);
-const isPortrait: Ref<boolean> = ref(window.matchMedia("(max-width: 768px)").matches);
+const displayName = computed(() => isPortrait.value ? 'M.': 'Matteo');
+const isPortrait: Ref<boolean> = ref(window.matchMedia("(orientation: portrait)").matches);
 
 function toggleMenu() {
   showMenu.value = !showMenu.value;
@@ -90,8 +91,9 @@ align-items: center;
 }
 
 h1 {
-font-size: 2.7rem;
+font-size: 2rem;
 margin-bottom: 20px;
+line-height: 1.1em;
 }
 
 .social-buttons {

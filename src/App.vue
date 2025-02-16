@@ -1,12 +1,12 @@
 <template>
     <!-- Footbar (appears after 2s) -->
     <transition name="fade">
-      <div class="footbar" v-if="showFootbar && $route.path === '/'">
+      <div class="footbar" v-if="showFootbar && ($route.path === '/' || !isPortrait)">
         <nav>
-        <RouterLink class="hoverable" to="/projects" @mouseover="showFinger" @mouseleave="hideFinger">Projects</RouterLink>
-        <RouterLink class="hoverable" to="/teachings" @mouseover="showFinger" @mouseleave="hideFinger">Teachings</RouterLink>
-        <RouterLink class="hoverable" to="/bio" @mouseover="showFinger" @mouseleave="hideFinger">Bio</RouterLink>
-        <a class="hoverable" href="/notes" target="_blank" @mouseover="showFinger" @mouseleave="hideFinger">Notes</a>
+          <RouterLink class="hoverable" to="/projects" @mouseover="showFinger" @mouseleave="hideFinger">Projects</RouterLink>
+          <RouterLink class="hoverable" to="/teachings" @mouseover="showFinger" @mouseleave="hideFinger">Teachings</RouterLink>
+          <RouterLink class="hoverable" to="/bio" @mouseover="showFinger" @mouseleave="hideFinger">Bio</RouterLink>
+          <a class="hoverable" href="/notes" target="_blank" @mouseover="showFinger" @mouseleave="hideFinger">Notes</a>
         </nav>
       </div>
     </transition>
@@ -15,7 +15,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, type Ref } from 'vue';
+
+const isPortrait: Ref<boolean> = ref(window.matchMedia("(orientation: portrait)").matches);
 const showFootbar = ref(false);
 
 setTimeout(() => {
