@@ -103,7 +103,7 @@ width: 100vw;
   bottom: 20px;
   width: 100%;
   opacity: 0;
-  animation: fadeIn 2.5s forwards 2s;
+  animation: fadeIn 2.5s forwards 0.5s;
 }
 
 .footbar nav {
