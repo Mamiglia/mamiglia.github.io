@@ -50,7 +50,6 @@ defineComponent({
   max-width: 70vw;
   margin: 40px auto;
   padding: 20px;
-  background-color: white;
   color: #333;
   flex-direction: column;
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;

@@ -34,7 +34,7 @@ const getIcon = (link: string) => {
 
 <style scoped>
 .project {
-  background: #f9f9f9;
+  background: var(--palette-lightestest-orange);
   padding: 16px;
   margin: 16px 0;
   border-radius: 10px;
@@ -50,14 +50,14 @@ const getIcon = (link: string) => {
 }
 
 .project h2 {
-  color: #FF8800;
+  color: var(--palette-dark-orange);
   font-size: 1.2rem;
   margin-bottom: 8px;
   line-height: 1.1em;
 }
 
 .project p {
-  color: #333;
+  color: var(--color-text);
   font-size: 0.9rem;
   line-height: 1.4;
   margin-bottom: 30px;
@@ -77,24 +77,24 @@ const getIcon = (link: string) => {
   justify-content: center;
   width: 2rem;
   height: 2rem;
-  background: rgba(255, 136, 0, 0.2);
+  background: var(--color-background);
   border-radius: 50%;
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .links a:hover {
-  background: #FF8800;
+  background: var(--palette-dark-blue);
   transform: scale(1.1);
 }
 
 .links a svg {
   width: 1.5rem;
   height: 1.5rem;
-  color: #FF8800;
+  color: var(--palette-dark-orange);
   transition: color 0.3s ease;
 }
 
 .links a:hover svg {
-  color: white;
+  color: var(--color-background-soft);
 }
 </style>

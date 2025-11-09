@@ -1,40 +1,41 @@
 /* Custom Toast Styles */
 
-/* Success toast - friendly green */
+/* Success toast */
 .Vue-Toastification__toast--success {
-  background-color: #10b981 !important;
+  background-color: var(--palette-orange) !important;
 }
 
-/* Warning toast - cautionary orange */
+/* Warning toast */
 .Vue-Toastification__toast--warning {
-  background-color: #f59e0b !important;
+  background-color: var(--palette-dark-orange) !important;
 }
 
-/* Error toast - urgent red */
+/* Error toast */
 .Vue-Toastification__toast--error {
-  background-color: #ef4444 !important;
+  background-color: var(--palette-dark-orange) !important;
 }
 
-/* Info toast - calm blue */
+/* Info toast */
 .Vue-Toastification__toast--info {
-  background-color: #3b82f6 !important;
+  background-color: var(--palette-medium-blue) !important;
+  color: var(--palette-lightest-orange) !important;
 }
 
 /* Customize the progress bar colors */
 .Vue-Toastification__toast--success .Vue-Toastification__progress-bar {
-  background-color: #059669 !important;
+  background-color: var(--palette-dark-orange) !important;
 }
 
 .Vue-Toastification__toast--warning .Vue-Toastification__progress-bar {
-  background-color: #d97706 !important;
+  background-color: var(--palette-dark-blue) !important;
 }
 
 .Vue-Toastification__toast--error .Vue-Toastification__progress-bar {
-  background-color: #dc2626 !important;
+  background-color: var(--palette-dark-blue) !important;
 }
 
 .Vue-Toastification__toast--info .Vue-Toastification__progress-bar {
-  background-color: #2563eb !important;
+  background-color: var(--palette-dark-blue) !important;
 }
 
 /* Optional: Customize font and border radius */

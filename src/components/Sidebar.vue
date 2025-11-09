@@ -74,7 +74,7 @@ onBeforeUnmount(() => {
 position: fixed;
 width: 20vw;
 height: 100vh;
-background-color: #f8f9fa;
+background-color: var(--color-background-soft);
 display: flex;
 flex-direction: column;
 justify-content: space-between;
@@ -100,7 +100,11 @@ line-height: 1.1em;
 display: flex;
 gap: 10px;
 font-size: 2em;
-color: #666;
+color: var(--color-text);
+}
+
+.social-buttons a:hover svg {
+  color: var(--palette-dark-blue);
 }
 
 @media (max-width: 768px) {
@@ -112,8 +116,8 @@ color: #666;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #ddd;
+    background-color: var(--color-background-soft);
+    border-bottom: 1px solid var(--color-border);
     height: auto;
     z-index: 2;
   }
@@ -150,9 +154,9 @@ color: #666;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f8f9fa;
+  background-color: var(--color-background-soft);
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--color-border);
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 100vw;
@@ -171,7 +175,7 @@ color: #666;
 .dropdown-menu a {
   margin: 10px 0;
   font-size: 1.2em;
-  color: #333;
+  color: var(--color-text);
   text-decoration: none;
 }
 

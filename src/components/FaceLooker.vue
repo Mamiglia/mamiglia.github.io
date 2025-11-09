@@ -188,8 +188,8 @@ onUnmounted(() => {
   position: absolute;
   top: 10px;
   left: 10px;
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
+  background: var(--palette-dark-blue);
+  color: var(--palette-lightest-orange);
   padding: 8px 12px;
   border-radius: 4px;
   font-family: monospace;

@@ -31,7 +31,7 @@ teaching: {
 
 <style scoped>
 .teaching-card {
-background: #ffffff;
+background: var(--color-background-soft);
 padding: 16px;
 border-radius: 8px;
 box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
@@ -39,7 +39,7 @@ transition: box-shadow 0.2s ease-in-out;
 display: flex;
 flex-direction: column;
 position: relative;
-border-left: 4px solid #d96d00;
+border-left: 4px solid var(--palette-dark-orange);
 }
 
 .teaching-card:hover {
@@ -53,18 +53,18 @@ margin-bottom: 10px;
 .teaching-title {
 font-size: 1.2rem;
 font-weight: 600;
-color: #333;
+color: var(--color-text);
 }
 
 .teaching-role {
 font-size: 0.85rem;
-color: #555;
+color: var(--color-text);
 opacity: 0.85;
 }
 
 .teaching-place {
 font-size: 0.9rem;
-color: #d96d00;
+color: var(--palette-dark-orange);
 display: flex;
 gap: 6px;
 font-weight: 500;
@@ -72,12 +72,12 @@ font-weight: 500;
 
 .teaching-place span {
 font-size: 1rem;
-color: #d96d00;
+color: var(--palette-dark-orange);
 }
 
 .teaching-description {
 font-size: 0.9rem;
-color: #444;
+color: var(--color-text);
 opacity: 0.9;
 }
 
@@ -87,7 +87,7 @@ bottom: 4px;
 right: 12px;
 align-items: center;
 justify-content: center;
-color: #d96d00;
+color: var(--palette-dark-orange);
 transition: color 0.2s ease-in-out;
 }
 
@@ -97,13 +97,13 @@ transition: color 0.2s ease-in-out;
 }
 
 .teaching-link:hover {
-color: #b35600;
+color: var(--palette-orange);
 }
 
 @media (orientation: portrait) {
 .teaching-card {
     border-left: none;
-    border-top: 4px solid #d96d00;
+    border-top: 4px solid var(--palette-dark-orange);
     padding-left: 8px;
     padding-right: 8px;
 }

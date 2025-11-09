@@ -8,8 +8,8 @@
 
 }
 ::selection {
-  background: #333;
-  color: #fff;
+  background: var(--palette-medium-blue);
+  color: var(--palette-lightest-orange);
 }
 body, html, #app {
   height: 100vh;
@@ -18,11 +18,11 @@ body, html, #app {
 }
 
 a {
-  color: #666;
+  color: var(--palette-dark-orange);
 }
 
 a.social {
-  color: #666;
+  color: var(--palette-dark-orange);
 }
 
 @media (min-width: 1024px) {
