@@ -1,5 +1,8 @@
 <template>
-<div class="landing"> 
+<div class="landing">
+  <div class="face-looker-container">
+    <FaceLooker :showDebug="false" :startDelay="1000" />
+  </div>
   <h1>
     Matteo <span class="bold">Migliarini</span>
   </h1>
@@ -20,6 +23,7 @@
 import { ref, onMounted } from 'vue';
 import SvgIcon from '@jamescoyle/vue-icon';
 import { mdiGithub, mdiLinkedin } from '@mdi/js';
+import FaceLooker from '../components/FaceLooker.vue';
 
 const titles = ["AI Researcher", "Computer Engineer", "Data Scientist"];
 const displayedTitle = ref("");
@@ -95,6 +99,13 @@ body, html, #app {
   color: #333;
 }
 
+.face-looker-container {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
 .landing h1 {
   font-size: 2.7rem;
   height: 4rem;
@@ -134,6 +145,12 @@ body, html, #app {
 }
 
 @media (orientation: portrait) {
+  .face-looker-container {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1rem;
+  }
+
   .landing h1 {
     /* font-size: 3.5rem; */
     height: auto;
