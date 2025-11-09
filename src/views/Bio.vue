@@ -70,6 +70,7 @@ defineComponent({
     .face-looker-container {
         width: 250px;
         height: 250px;
+        margin-bottom: 40px;
     }
 }
 </style>

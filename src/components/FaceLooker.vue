@@ -13,7 +13,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  basePath: '/src/assets/faces/',
+  basePath: '/faces/',
   showDebug: false,
   startDelay: 0
 });
