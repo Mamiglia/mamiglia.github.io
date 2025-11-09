@@ -1,14 +1,32 @@
 projects:
+  - title: "Human Motion Unlearning"
+    description: "We introduce the task of Human Motion Unlearning to prevent text-to-motion generative models from synthesizing violent or harmful animations (e.g., punching, kicking). This is a significant challenge, as violent motions can be generated from both explicit prompts ('a person kicks') and implicit, safe-sounding prompts ('a man swings his leg'). We created the first benchmark for this task by filtering the large-scale HumanML3D and Motion-X datasets. Our primary contribution is LCR (Latent Code Replacement), a novel, training-free unlearning method that operates directly on the discrete latent space (codebook) of models. LCR efficiently removes harmful motion patterns by identifying and replacing 'violent' codes with safe ones, preserving overall generation quality without costly retraining."
+    links:
+      - https://arxiv.org/abs/2503.18674
+      - https://www.pinlab.org/hmu
+      - https://github.com/Mamiglia/hmu
+  - title: "Video Unlearning via Low-Rank Refusal Vector"
+    description: "We propose the first training-free unlearning framework specifically designed for video diffusion models. Generative video models often inherit harmful concepts like nudity, violence, and copyrighted material from their web-scale training data. Our method, Low-Rank Refusal Vector, addresses this by precisely removing unwanted concepts without costly retraining. It works by using just 5 multi-modal 'safe' and 'unsafe' prompt pairs to compute a 'refusal vector' from their latent differences. We introduce a novel low-rank factorization technique (Contrastive PCA) to isolate the target concept, ensuring that only the harmful content is removed while preserving the model's overall video quality. This refusal vector is then embedded directly into the model's weights, making the fix permanent and robust with no added inference cost."
+    links:
+      - https://arxiv.org/abs/2506.07891
+      - https://www.pinlab.org/video-unlearning
+
   - title: "SeRpEnt"
     description: "We propose Selective Resampling for Expressive State Space Models, a State Space Model that enhances Mamba’s selective mechanism with resampling to compress sequences efficiently. Our approach improves Long Range Arena performance and boosts language modeling accuracy, demonstrating the benefits of selective resampling. Accepted at ICML 2024 Workshop: Next Generation of Sequence Modeling."
     links:
       - https://arxiv.org/abs/2501.11729
       - https://sites.google.com/view/ngsmworkshop/accepted-papers
   - title: "Mergecraft"
-    description: " a Python library designed to simplify the process of merging machine learning models, enabling data scientists to combine the strengths of fine-tuned models without the need for retraining. By providing a flexible interface and supporting various merging techniques like TIES, SLERP, and DARE, Mergecraft allows users to explore and experiment with novel strategies. It integrates seamlessly with Hugging Face models and supports the development of custom merging methods, offering a more efficient alternative to traditional model ensembles."
+    description: " an Open-Source Python library designed to simplify the process of merging machine learning models, enabling data scientists to combine the strengths of fine-tuned models without the need for retraining. By providing a flexible interface and supporting various merging techniques like TIES, SLERP, and DARE, Mergecraft allows users to explore and experiment with novel strategies. It integrates seamlessly with Hugging Face models and supports the development of custom merging methods, offering a more efficient alternative to traditional model ensembles."
     links:
       - https://mamiglia.notion.site/Mergecraft-6decfd9415314eaf8dc5e68c078ffe6e
       - https://github.com/Mamiglia/Mergecraft
+  - title: "PyTorch Open Source Contributor" 
+    description: "As an active member of the open-source community, I contributed directly to the PyTorch library, one of the world's leading deep learning frameworks. I identified a subtle issue in the official documentation for torch.optim where the provided examples could inadvertently lead users away from best practices in model training. I proposed a solution, collaborated with the PyTorch maintainers, and successfully merged a pull request that clarifies the use of per-parameter options. This change helps thousands of developers better understand advanced optimization and improve their model's performance." 
+    links: 
+      - https://github.com/pytorch/pytorch/pull/117436
+      - https://github.com/pytorch/pytorch/issues/115935
+      - https://docs.pytorch.org/docs/stable/optim.html#per-parameter-options
   - title: "Bayesian NN × Human Pose Forecasting"
     description: "The goal of this model is to predict human poses in dynamic scenarios, such as human-robot interaction and autonomous driving, while accounting for uncertainty. The model has been trained using the Human3.6M dataset and uses a Space-Time Graph Convolutional Network to address the complexities of the movement forecasting. Thanks to the Bayesian approach, we're able to estimate the uncertainty of the prediction, allowing for risk estimation and cautios approach when deploying such models in the proximity of humans."
     links:
@@ -19,7 +37,7 @@ projects:
       - https://mamiglia.github.io/meravigliosi-automi
       - https://github.com/Mamiglia/meravigliosi-automi
   - title: "Reddit Wallpaper"
-    description: "A dynamic wallpaper changer that automatically downloads and sets wallpapers from Reddit based on user-defined preferences. Featuring a non-repetitive selection algorithm, it ensures fresh backgrounds without repeats. With an easy installation, a GUI for customization, system tray support, and resolution filtering, it runs seamlessly in the background. Originally written in Java and later migrated to Kotlin, this project enhanced my skills in codebase management and API integration."
+    description: "An open-source dynamic wallpaper changer that automatically downloads and sets wallpapers from Reddit based on user-defined preferences. Featuring a non-repetitive selection algorithm, it ensures fresh backgrounds without repeats. With an easy installation, a GUI for customization, system tray support, and resolution filtering, it runs seamlessly in the background. Originally written in Java and later migrated to Kotlin, this project enhanced my skills in codebase management and API integration."
     links: 
       - https://github.com/Mamiglia/Reddit-Wallpaper
 

@@ -40,7 +40,7 @@ defineComponent({
           v-if="bioText.length"
           :strings="bioText"
           :autoStart="true"
-          :delay="15"
+          :delay="4"
           :deleteSpeed="100000000000000000000"
           :cursor="'█'"
         />
