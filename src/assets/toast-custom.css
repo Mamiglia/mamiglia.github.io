@@ -1,0 +1,45 @@
+/* Custom Toast Styles */
+
+/* Success toast - friendly green */
+.Vue-Toastification__toast--success {
+  background-color: #10b981 !important;
+}
+
+/* Warning toast - cautionary orange */
+.Vue-Toastification__toast--warning {
+  background-color: #f59e0b !important;
+}
+
+/* Error toast - urgent red */
+.Vue-Toastification__toast--error {
+  background-color: #ef4444 !important;
+}
+
+/* Info toast - calm blue */
+.Vue-Toastification__toast--info {
+  background-color: #3b82f6 !important;
+}
+
+/* Customize the progress bar colors */
+.Vue-Toastification__toast--success .Vue-Toastification__progress-bar {
+  background-color: #059669 !important;
+}
+
+.Vue-Toastification__toast--warning .Vue-Toastification__progress-bar {
+  background-color: #d97706 !important;
+}
+
+.Vue-Toastification__toast--error .Vue-Toastification__progress-bar {
+  background-color: #dc2626 !important;
+}
+
+.Vue-Toastification__toast--info .Vue-Toastification__progress-bar {
+  background-color: #2563eb !important;
+}
+
+/* Optional: Customize font and border radius */
+.Vue-Toastification__toast {
+  border-radius: 8px !important;
+  font-family: inherit !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
