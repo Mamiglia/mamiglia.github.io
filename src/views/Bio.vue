@@ -2,13 +2,12 @@
 import { defineComponent } from 'vue';
 import Sidebar from '../components/Sidebar.vue';
 import Game from '../components/Game.vue';
+import FaceLooker from '../components/FaceLooker.vue';
 
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
 
-import VueTypewriterEffect from "vue-typewriter-effect";
-
-const bioText = ref([]);
+const bioText = ref('');
 
 
 function add() {
@@ -20,7 +19,7 @@ function remove() {
 }
 onMounted(async () => {
     const response = await axios.get('/docs/bio.md');
-    bioText.value = response.data.split('\n');
+    bioText.value = response.data;
 });
 
 defineComponent({
@@ -36,14 +35,12 @@ defineComponent({
         <Sidebar />
         <div class="content">
         <h1>Bio</h1>
-        <vue-typewriter-effect
-          v-if="bioText.length"
-          :strings="bioText"
-          :autoStart="true"
-          :delay="3"
-          :deleteSpeed="100000000000000000000"
-          :cursor="'█'"
-        />
+        <div v-if="bioText" class="bio-text">
+            {{ bioText }}
+        </div>
+        </div>
+        <div class="face-looker-container">
+            <FaceLooker :showDebug="false" />
         </div>
         <Game />
 
@@ -58,11 +55,21 @@ defineComponent({
     font-size: 1rem;
 }
 
+.face-looker-container {
+    width: 300px;
+    height: 300px;
+    margin: 2em auto;
+}
+
 @media (orientation: portrait) {
     .content {
         max-width: 100vw;
         padding: 0em 2em;
     }
 
+    .face-looker-container {
+        width: 250px;
+        height: 250px;
+    }
 }
 </style>
