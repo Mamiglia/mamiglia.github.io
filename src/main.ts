@@ -12,7 +12,7 @@ import './assets/toast-custom.css'
 const app = createApp(App)
 app.use(router)
 app.use(Toast, {
-  position: 'top-center',
+  position: 'top-right',
   timeout: 3000,
   closeOnClick: true,
   pauseOnFocusLoss: true,

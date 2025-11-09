@@ -127,16 +127,16 @@ function handleClick() {
 // Lifecycle hooks
 onMounted(() => {
   // Delay the start of tracking if specified
+  // Initialize at center
+  if (containerRef.value) {
+    const rect = containerRef.value.getBoundingClientRect();
+    setFromClient(rect.left, rect.top + rect.height / 2);
+  }
   setTimeout(() => {
     // Track pointer anywhere on the page
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('touchmove', handleTouchMove, { passive: true });
 
-    // Initialize at center
-    if (containerRef.value) {
-      const rect = containerRef.value.getBoundingClientRect();
-      setFromClient(rect.left + rect.width / 2, rect.top + rect.height / 2);
-    }
   }, props.startDelay);
 });
 
