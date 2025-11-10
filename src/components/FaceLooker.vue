@@ -21,7 +21,7 @@ const props = withDefaults(defineProps<Props>(), {
 // Grid configuration (must match your generated images)
 const P_MIN = -15;
 const P_MAX = 15;
-const STEP = 6;
+const STEP = 3;
 const SIZE = 256;
 
 // Reactive state
