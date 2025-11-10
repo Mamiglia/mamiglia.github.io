@@ -21,7 +21,7 @@ const props = withDefaults(defineProps<Props>(), {
 // Grid configuration (must match your generated images)
 const P_MIN = -15;
 const P_MAX = 15;
-const STEP = 3;
+const STEP = 6;
 const SIZE = 256;
 
 // Reactive state
@@ -52,6 +52,23 @@ function quantizeToGrid(val: number): number {
 function sanitize(val: number): string {
   const str = Number(val).toFixed(1); // force one decimal, e.g. 0 -> 0.0
   return str.replace('-', 'm').replace('.', 'p');
+}
+
+function preloadImages() {
+  // Preload all images in the grid, staggered to avoid overwhelming the browser
+  let delay = 0;
+  const DELAY_INCREMENT = 50; // ms delay between each request
+
+  for (let px = P_MIN; px <= P_MAX; px += STEP) {
+    for (let py = P_MIN; py <= P_MAX; py += STEP) {
+      setTimeout(() => {
+        const filename = gridToFilename(px, py);
+        const img = new Image();
+        img.src = `${props.basePath}${filename}`;
+      }, delay);
+      delay += DELAY_INCREMENT;
+    }
+  }
 }
 
 function gridToFilename(px: number, py: number): string {
@@ -126,12 +143,13 @@ function handleClick() {
 
 // Lifecycle hooks
 onMounted(() => {
-  // Delay the start of tracking if specified
   // Initialize at center
   if (containerRef.value) {
     const rect = containerRef.value.getBoundingClientRect();
     setFromClient(rect.left, rect.top + rect.height / 2);
   }
+  preloadImages();
+  // Delay the start of tracking if specified
   setTimeout(() => {
     // Track pointer anywhere on the page
     window.addEventListener('mousemove', handleMouseMove);

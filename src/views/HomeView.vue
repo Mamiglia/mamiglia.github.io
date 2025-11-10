@@ -1,7 +1,7 @@
 <template>
 <div class="landing">
   <div class="face-looker-container">
-    <FaceLooker :showDebug="false" :startDelay="3000" />
+    <FaceLooker :showDebug="false" :startDelay="500" />
   </div>
   <h1>
     Matteo <span class="bold">Migliarini</span>
