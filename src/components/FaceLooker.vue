@@ -54,21 +54,47 @@ function sanitize(val: number): string {
   return str.replace('-', 'm').replace('.', 'p');
 }
 
-function preloadImages() {
-  // Preload all images in the grid, staggered to avoid overwhelming the browser
-  let delay = 0;
-  const DELAY_INCREMENT = 50; // ms delay between each request
+async function preloadImages() {
+  const CONCURRENCY_LIMIT = 8;
 
+  // 1. Generate all filenames
+  const filenames: string[] = [];
   for (let px = P_MIN; px <= P_MAX; px += STEP) {
     for (let py = P_MIN; py <= P_MAX; py += STEP) {
-      setTimeout(() => {
-        const filename = gridToFilename(px, py);
-        const img = new Image();
-        img.src = `${props.basePath}${filename}`;
-      }, delay);
-      delay += DELAY_INCREMENT;
+      filenames.push(gridToFilename(px, py));
     }
   }
+
+  // 2. Shuffle the list for a random load order
+  for (let i = filenames.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [filenames[i], filenames[j]] = [filenames[j], filenames[i]];
+  }
+
+  // 3. Load images with a concurrency limit
+  const queue = [...filenames];
+
+  const loadImage = (filename: string) => {
+    return new Promise<void>((resolve) => {
+      const img = new Image();
+      img.src = `${props.basePath}${filename}`;
+      // Resolve on both load and error to not block the queue
+      img.onload = () => resolve();
+      img.onerror = () => resolve();
+    });
+  };
+
+  const processNext = async () => {
+    if (queue.length > 0) {
+      const filename = queue.shift()!;
+      await loadImage(filename);
+      await processNext();
+    }
+  };
+
+  // Start N workers
+  const workers = Array(CONCURRENCY_LIMIT).fill(null).map(processNext);
+  await Promise.all(workers);
 }
 
 function gridToFilename(px: number, py: number): string {
