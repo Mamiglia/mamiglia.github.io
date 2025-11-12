@@ -1,7 +1,10 @@
 <template>
   <div class="project">
-    <h2>{{ project.title }}</h2>
-    <p>{{ project.description }}</p>
+    <img v-if="project.image" :src="getImageUrl(project.image)" :alt="project.title" class="project-image" />
+    <div class="content">
+      <h2>{{ project.title }}</h2>
+      <p>{{ project.description }}</p>
+    </div>
     <div class="links">
       <a v-for="link in project.links" :key="link" :href="link" target="_blank">
         <svg-icon type="mdi" :path="getIcon(link)"></svg-icon>
@@ -20,6 +23,10 @@ defineProps({
     required: true
   }
 });
+
+const getImageUrl = (imageName: string) => {
+  return `/project_images/${imageName}`;
+};
 
 const getIcon = (link: string) => {
   if (link.includes('github.com')) {
@@ -41,12 +48,29 @@ const getIcon = (link: string) => {
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   position: relative;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  break-inside: avoid;
 }
 
 .project:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+  width: 100%;
+  height: 25vh;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.content {
+  padding: 0;
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .project h2 {
@@ -60,14 +84,13 @@ const getIcon = (link: string) => {
   color: var(--color-text);
   font-size: 0.9rem;
   line-height: 1.4;
-  margin-bottom: 30px;
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  flex-grow: 1;
 }
 
 .links {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
+  margin-top: auto;
+  align-self: flex-end;
   display: flex;
 }
 
