@@ -75,7 +75,6 @@ width: 100vw;
   max-width: 50vw;
 }
 
-
 .bold {
   font-weight: bold;
 }
@@ -100,7 +99,7 @@ width: 100vw;
 
 .footbar {
   position: fixed;
-  bottom: 20px;
+  bottom: 10px;
   width: 100%;
   opacity: 0;
   animation: fadeIn 2.5s forwards 0.5s;

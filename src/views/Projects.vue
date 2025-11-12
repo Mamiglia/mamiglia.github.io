@@ -42,7 +42,7 @@ onMounted(async () => {
 <style scoped>
 .content {
     max-width: 70vw;
-    margin: 40px auto;
+    margin: 50px auto;
     padding: 20px;
     font-family: 'Courier Prime', monospace;
 }

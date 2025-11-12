@@ -48,7 +48,7 @@ defineComponent({
 .content {
   display: flex;
   max-width: 70vw;
-  margin: 40px auto;
+  margin: 50px auto;
   padding: 20px;
   color: #333;
   flex-direction: column;
