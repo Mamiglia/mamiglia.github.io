@@ -6,6 +6,10 @@ projects:
       - https://www.pinlab.org/hmu
       - https://github.com/Mamiglia/hmu
     image: hmu.png
+  - title: "Inspect AI Contribution"
+    description: "Contributed a usability fix to **Inspect AI** for remote SSH users. The `inspect view` server now automatically detects and displays the machine's actual IP address instead of `0.0.0.0`, eliminating a manual step and streamlining the remote evaluation workflow."
+    links:
+      - https://github.com/UKGovernmentBEIS/inspect_ai/pull/2880
   - title: "Video Unlearning via Low-Rank Refusal Vector"
     description: "We introduce Video Unlearning, the first training-free method to remove harmful concepts from video diffusion models. Our approach, the Low-Rank Refusal Vector, uses just a few safe/unsafe prompt pairs to erase unwanted content like nudity or violence permanently, without retraining or quality loss."
     links:
@@ -24,9 +28,9 @@ projects:
       - https://mamiglia.notion.site/Mergecraft-6decfd9415314eaf8dc5e68c078ffe6e
       - https://github.com/Mamiglia/Mergecraft
     image: the-alchemist.jpg
-  - title: "PyTorch Contribution" 
-    description: "As an active member of the open-source community, I contributed directly to the PyTorch library, one of the world's leading deep learning frameworks. I identified a subtle issue in the official documentation for torch.optim where the provided examples could inadvertently lead users away from best practices in model training. I proposed a solution, collaborated with the PyTorch maintainers, and successfully merged a pull request that clarifies the use of per-parameter options. This change helps thousands of developers better understand advanced optimization and improve their model's performance." 
-    links: 
+  - title: "PyTorch Contribution"
+    description: "Contributed directly to the PyTorch library. I identified and resolved a documentation issue in `torch.optim` examples for per-parameter options, successfully merging a pull request that clarifies advanced optimization best practices for thousands of developers."
+    links:
       - https://github.com/pytorch/pytorch/pull/117436
       - https://github.com/pytorch/pytorch/issues/115935
       - https://docs.pytorch.org/docs/stable/optim.html#per-parameter-options
