@@ -1,4 +1,8 @@
 projects:
+  - title: "@Grokset: Human-LLM Interactions in Social Media"
+    description: "A large-scale research dataset analyzing how the @Grok model operates in public social media discourse. The dataset comprises over 1M tweets collected across seven months from X, capturing complex multi-party interactions. Our findings reveal how users invoke @Grok as an authoritative arbiter in polarizing debates, document the engagement gap between AI and human peers, and show how users bypass safety filters through simple persona adoption."
+    links:
+      - https://cdn.britannica.com/36/182036-050-6D213520/Oedipus-Sphinx-interior-kylix-Attic-Vatican-Museums-c-470-bce.jpg?w=300
   - title: "Human Motion Unlearning"
     description: "We introduce Human Motion Unlearning (AAAI'26): removing violent behaviors (like punching or kicking) from text-to-motion models. Our method, LCR (Latent Code Replacement), erases harmful motion patterns directly in the model’s latent space. No retraining needed, no loss in quality."
     links:
@@ -6,16 +10,17 @@ projects:
       - https://www.pinlab.org/hmu
       - https://github.com/Mamiglia/hmu
     image: hmu.png
-  - title: "Inspect AI Contribution"
-    description: "Contributed a usability fix to **Inspect AI** for remote SSH users. The `inspect view` server now automatically detects and displays the machine's actual IP address instead of `0.0.0.0`, eliminating a manual step and streamlining the remote evaluation workflow."
-    links:
-      - https://github.com/UKGovernmentBEIS/inspect_ai/pull/2880
   - title: "Video Unlearning via Low-Rank Refusal Vector"
-    description: "We introduce Video Unlearning, the first training-free method to remove harmful concepts from video diffusion models. Our approach, the Low-Rank Refusal Vector, uses just a few safe/unsafe prompt pairs to erase unwanted content like nudity or violence permanently, without retraining or quality loss."
+    description: "In this paper, accepted at ICLR'26, we introduce the first training-free method to remove harmful concepts from video diffusion models. Our approach, the Low-Rank Refusal Vector, uses just a few safe/unsafe prompt pairs to erase unwanted content like nudity or violence permanently, without retraining or quality loss."
     links:
       - https://arxiv.org/abs/2506.07891
       - https://www.pinlab.org/video-unlearning
     image: vu-lrrv.png
+  - title: "Inspect AI Contribution"
+    description: "Integrated the Anthropic API for Azure Foundry and contributed a usability fix to Inspect AI for remote SSH users, streamlining the remote evaluation workflow."
+    links:
+      - https://github.com/UKGovernmentBEIS/inspect_ai/pull/2935
+      - https://github.com/UKGovernmentBEIS/inspect_ai/pull/2880
   - title: "SeRpEnt"
     description: "We propose Selective Resampling for Expressive State Space Models, a State Space Model that enhances Mamba’s selective mechanism with resampling to compress sequences efficiently. Our approach improves Long Range Arena performance and boosts language modeling accuracy, demonstrating the benefits of selective resampling. Accepted at ICML 2024 Workshop: Next Generation of Sequence Modeling."
     links:
