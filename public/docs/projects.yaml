@@ -1,8 +1,7 @@
 projects:
   - title: "@Grokset: Human-LLM Interactions in Social Media"
     description: "A large-scale research dataset analyzing how the @Grok model operates in public social media discourse. The dataset comprises over 1M tweets collected across seven months from X, capturing complex multi-party interactions. Our findings reveal how users invoke @Grok as an authoritative arbiter in polarizing debates, document the engagement gap between AI and human peers, and show how users bypass safety filters through simple persona adoption."
-    links:
-      - https://cdn.britannica.com/36/182036-050-6D213520/Oedipus-Sphinx-interior-kylix-Attic-Vatican-Museums-c-470-bce.jpg?w=300
+    image: https://cdn.britannica.com/36/182036-050-6D213520/Oedipus-Sphinx-interior-kylix-Attic-Vatican-Museums-c-470-bce.jpg?w=300
   - title: "Human Motion Unlearning"
     description: "We introduce Human Motion Unlearning (AAAI'26): removing violent behaviors (like punching or kicking) from text-to-motion models. Our method, LCR (Latent Code Replacement), erases harmful motion patterns directly in the model’s latent space. No retraining needed, no loss in quality."
     links:
