@@ -25,6 +25,9 @@ defineProps({
 });
 
 const getImageUrl = (imageName: string) => {
+  if (imageName.startsWith('http://') || imageName.startsWith('https://')) {
+    return imageName;
+  }
   return `/project_images/${imageName}`;
 };
 
