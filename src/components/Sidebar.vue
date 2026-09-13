@@ -40,32 +40,21 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faGithub, faLinkedin, faGoogleScholar } from '@fortawesome/free-brands-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { ref, onMounted, onBeforeUnmount, type Ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
+import { useNarrow } from '@/composables/useNarrow';
 
 library.add(faGithub, faLinkedin, faGoogleScholar, faBars);
 
-const narrowQuery = window.matchMedia('(max-width: 768px)');
 const showMenu = ref(false);
-const isPortrait: Ref<boolean> = ref(narrowQuery.matches);
+const isPortrait = useNarrow();
 const displayName = computed(() => isPortrait.value ? 'M.': 'Matteo');
 
 function toggleMenu() {
   showMenu.value = !showMenu.value;
 }
 
-function onNarrowChange(e: MediaQueryListEvent) {
-  isPortrait.value = e.matches;
-  if (!isPortrait.value) {
-    showMenu.value = false;
-  }
-}
-
-onMounted(() => {
-  narrowQuery.addEventListener('change', onNarrowChange);
-});
-
-onBeforeUnmount(() => {
-  narrowQuery.removeEventListener('change', onNarrowChange);
+watch(isPortrait, (narrow) => {
+  if (!narrow) showMenu.value = false;
 });
 
 </script>
@@ -112,10 +101,14 @@ color: var(--color-text);
   color: var(--palette-dark-blue);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px), (max-height: 520px) {
+  /* Top bar: sticky rather than fixed, so it needs no spacer and never
+     covers the page heading whatever the viewport height. */
   .sidebar {
+    position: sticky;
+    top: 0;
     width: 100%;
-    height: 10vh;
+    height: auto;
     padding: 0.5rem 1rem;
     display: flex;
     flex-direction: row;
@@ -123,12 +116,10 @@ color: var(--color-text);
     align-items: center;
     background-color: var(--color-background-soft);
     border-bottom: 1px solid var(--color-border);
-    height: auto;
     z-index: 2;
   }
   .padding {
-    width: 100vw;
-    height: 10vh;
+    display: none;
   }
   /* Optionally, adjust heading font-size for topbar */
   a {
@@ -165,7 +156,7 @@ color: var(--color-text);
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 100vw;
-  padding-top: 11vh;
+  padding-top: 4rem;
   z-index: 1;
   opacity: 0;
   transform: translateY(-20em);

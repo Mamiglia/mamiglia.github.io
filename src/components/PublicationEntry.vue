@@ -160,7 +160,7 @@ h2 a:hover {
   color: var(--palette-lightest-orange);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px), (max-height: 520px) {
   .publication {
     gap: 12px;
   }

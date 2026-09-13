@@ -16,10 +16,11 @@
 import Sidebar from '../components/Sidebar.vue';
 import ProjectCard from '../components/ProjectCard.vue';
 
-import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import axios from 'axios';
 import yaml from 'js-yaml';
 import type { Publication } from '../components/PublicationEntry.vue';
+import { useNarrow } from '@/composables/useNarrow';
 
 interface Project {
     title: string;
@@ -46,20 +47,15 @@ function toProject(pub: Publication): Project {
 // Deal projects into columns round-robin (1st -> left, 2nd -> right, ...)
 // so each column stays in order and the newest entries sit on the top row,
 // while every column packs its cards without gaps.
-const narrowQuery = window.matchMedia('(max-width: 768px)');
-const columnCount = ref(narrowQuery.matches ? 1 : 2);
+const isNarrow = useNarrow();
+const columnCount = computed(() => (isNarrow.value ? 1 : 2));
 const columns = computed(() => {
     const cols: Project[][] = Array.from({ length: columnCount.value }, () => []);
     projects.value.forEach((project, i) => cols[i % columnCount.value].push(project));
     return cols;
 });
 
-function onLayoutChange(e: MediaQueryListEvent) {
-    columnCount.value = e.matches ? 1 : 2;
-}
-
 onMounted(async () => {
-    narrowQuery.addEventListener('change', onLayoutChange);
     const [projectsRes, pubsRes] = await Promise.all([
         axios.get('/docs/projects.yaml'),
         axios.get('/docs/publications.yaml'),
@@ -70,10 +66,6 @@ onMounted(async () => {
     // Newest first; within a year, publications come before projects and
     // both keep their file order (Array.prototype.sort is stable).
     projects.value = [...featured, ...own].sort((a, b) => b.year - a.year);
-});
-
-onBeforeUnmount(() => {
-    narrowQuery.removeEventListener('change', onLayoutChange);
 });
 </script>
 
@@ -99,7 +91,7 @@ onBeforeUnmount(() => {
   gap: 1em;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px), (max-height: 520px) {
   .projects-grid {
     flex-direction: column;
     align-items: stretch;

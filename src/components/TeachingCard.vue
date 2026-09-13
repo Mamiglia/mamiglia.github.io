@@ -100,7 +100,7 @@ transition: color 0.2s ease-in-out;
 color: var(--palette-orange);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px), (max-height: 520px) {
 .teaching-card {
     border-left: none;
     border-top: 4px solid var(--palette-dark-orange);

@@ -1,7 +1,10 @@
 <template>
-    <!-- Footbar (appears after 2s) -->
+    <img :style="fingerStyle" src="@/assets/finger.png" class="finger-image" />
+    <RouterView />
+    <!-- Footbar (appears after 2s). Fixed at the bottom normally; on short
+         viewports it sits in the flow after the page content instead. -->
     <transition name="fade">
-      <div class="footbar" v-if="showFootbar && ($route.path === '/' || !isPortrait)">
+      <div class="footbar" v-if="showFootbar && ($route.path === '/' || !isNarrow)">
         <nav>
           <RouterLink class="hoverable" to="/projects" @mouseover="showFinger" @mouseleave="hideFinger">Projects</RouterLink>
           <RouterLink class="hoverable" to="/publications" @mouseover="showFinger" @mouseleave="hideFinger">Publications</RouterLink>
@@ -11,22 +14,14 @@
         </nav>
       </div>
     </transition>
-    <img :style="fingerStyle" src="@/assets/finger.png" class="finger-image" />
-    <RouterView />
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref } from 'vue';
+import { useNarrow } from '@/composables/useNarrow';
 
-const narrowQuery = window.matchMedia('(max-width: 768px)');
-const isPortrait = ref(narrowQuery.matches);
+const isNarrow = useNarrow();
 const showFootbar = ref(false);
-
-function onNarrowChange(e: MediaQueryListEvent) {
-  isPortrait.value = e.matches;
-}
-onMounted(() => narrowQuery.addEventListener('change', onNarrowChange));
-onBeforeUnmount(() => narrowQuery.removeEventListener('change', onNarrowChange));
 
 setTimeout(() => {
   showFootbar.value = true;
@@ -118,7 +113,7 @@ a.hoverable {
   transition: all 0.3s ease;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px), (max-height: 520px) {
   .page {
     flex-direction: column;
   }
@@ -141,18 +136,26 @@ a.hoverable {
   }
 
   .footbar nav {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    justify-items: center;
+    flex-wrap: wrap;
+    gap: 0.25em 2em;
+    padding: 0 1em;
   }
-  
+
   .footbar nav a {
     margin: 0;
   }
 
   .finger-image {
     display: none;
+  }
+}
+
+/* Short viewports (phones in landscape): nothing fits under a fixed bar, so
+   the footbar joins the normal flow after the page content. */
+@media (max-height: 520px) {
+  .footbar {
+    position: static;
+    padding: 1em 0 1.5em;
   }
 }
 </style>

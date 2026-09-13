@@ -125,7 +125,7 @@ onMounted(() => {
   margin-top: 1em;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px), (max-height: 520px) {
   .face-looker-container {
     width: 150px;
     height: 150px;
@@ -142,6 +142,19 @@ onMounted(() => {
   .social svg {
     width: 2.5rem;
     height: 2.5rem;
+  }
+}
+
+@media (max-height: 520px) {
+  .landing {
+    height: auto;
+    min-height: 0;
+    padding: 1.5em 0 0.5em;
+  }
+
+  .face-looker-container {
+    width: 120px;
+    height: 120px;
   }
 }
 </style>

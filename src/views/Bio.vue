@@ -43,7 +43,7 @@ onMounted(async () => {
     margin: 2em auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px), (max-height: 520px) {
     .content {
         max-width: 100%;
     }

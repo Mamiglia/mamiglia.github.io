@@ -50,7 +50,7 @@ onMounted(async () => {
   flex-direction: column;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px), (max-height: 520px) {
   .content {
     width: 100%;
     max-width: 100%;
