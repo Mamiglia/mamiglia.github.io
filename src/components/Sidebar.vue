@@ -27,11 +27,10 @@
 </div>
 
     <nav v-if="isPortrait" :class="{'dropdown-menu': true, 'open': showMenu}">
-      <RouterLink to="/projects">Projects</RouterLink>
       <RouterLink to="/publications">Publications</RouterLink>
+      <RouterLink to="/projects">Projects</RouterLink>
       <RouterLink to="/teachings">Teachings</RouterLink>
       <RouterLink to="/bio">Bio</RouterLink>
-      <a href="/notes" target="_blank">Notes</a>
     </nav>
 </template>
 

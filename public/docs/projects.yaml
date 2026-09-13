@@ -1,39 +1,39 @@
 projects:
   - title: "Inspect AI Contributions"
     year: 2026
-    description: "Integrated the Anthropic API for Azure Foundry and contributed a usability fix to Inspect AI for remote SSH users, streamlining the remote evaluation workflow. Over the last months I have also opened 20+ PRs and issues across Inspect AI and Inspect Evals, the UK AISI evaluation framework and its benchmark suite."
+    description: "Integrated the Anthropic API for Azure Foundry and fixed a usability issue for remote SSH users, streamlining the remote evaluation workflow. Since then, contributions to 20+ PRs and issues across Inspect AI and Inspect Evals, the UK AISI evaluation framework and its benchmark suite."
     links:
       - https://github.com/UKGovernmentBEIS/inspect_ai/pull/2935
       - https://github.com/UKGovernmentBEIS/inspect_ai/pull/2880
       - https://github.com/search?q=org%3AUKGovernmentBEIS+author%3Amamiglia&type=issues
   - title: "Mergecraft"
     year: 2024
-    description: "an Open-Source Python library designed to simplify the process of merging machine learning models, enabling data scientists to combine the strengths of fine-tuned models without the need for retraining. By providing a flexible interface and supporting various merging techniques like TIES, SLERP, and DARE, Mergecraft allows users to explore and experiment with novel strategies. It integrates seamlessly with Hugging Face models and supports the development of custom merging methods, offering a more efficient alternative to traditional model ensembles."
+    description: "An open-source Python library for merging fine-tuned models without retraining. It supports TIES, SLERP and DARE, works with Hugging Face models, and makes custom merging methods easy to add."
     links:
       - https://mamiglia.notion.site/Mergecraft-6decfd9415314eaf8dc5e68c078ffe6e
       - https://github.com/Mamiglia/Mergecraft
     image: the-alchemist.jpg
   - title: "PyTorch Contribution"
     year: 2024
-    description: "Contributed directly to the PyTorch library. I identified and resolved a documentation issue in `torch.optim` examples for per-parameter options, successfully merging a pull request that clarifies advanced optimization best practices for thousands of developers."
+    description: "Fixed the documentation of per-parameter options in the optimizer module, clarifying how advanced optimizer settings are meant to be used. Merged upstream."
     links:
       - https://github.com/pytorch/pytorch/pull/117436
       - https://github.com/pytorch/pytorch/issues/115935
       - https://docs.pytorch.org/docs/stable/optim.html#per-parameter-options
   - title: "Bayesian NN × Human Pose Forecasting"
     year: 2023
-    description: "The goal of this model is to predict human poses in dynamic scenarios, such as human-robot interaction and autonomous driving, while accounting for uncertainty. The model has been trained using the Human3.6M dataset and uses a Space-Time Graph Convolutional Network to address the complexities of the movement forecasting. Thanks to the Bayesian approach, we're able to estimate the uncertainty of the prediction, allowing for risk estimation and cautios approach when deploying such models in the proximity of humans."
+    description: "Predicts human poses in dynamic scenes such as human-robot interaction and autonomous driving, with a Bayesian Space-Time Graph Convolutional Network trained on Human3.6M. The uncertainty estimate allows risk-aware deployment near people."
     links:
       - https://github.com/Mamiglia/BNN_Human_motion
-  - title: Finite States Automaton.web
+  - title: "Finite State Automata.web"
     year: 2022
-    description: "A website that makes it easy to create and edit Finite States Automaton, allowing one to develop a deeper understanding of the theory behind FSA and Acceptors. The website is built to be easy to use, even for beginners, targeting mainly Computer Science students. The technologies used are mainly Vue.js and responsive CSS, following most modern web-dev practices."
+    description: "A web editor for finite state automata, built to help computer science students understand acceptors by drawing and running them. Vue.js, responsive layout."
     links:
       - https://mamiglia.github.io/meravigliosi-automi
       - https://github.com/Mamiglia/meravigliosi-automi
   - title: "Reddit Wallpaper"
     year: 2021
-    description: "An open-source dynamic wallpaper changer that automatically downloads and sets wallpapers from Reddit based on user-defined preferences. Featuring a non-repetitive selection algorithm, it ensures fresh backgrounds without repeats. With an easy installation, a GUI for customization, system tray support, and resolution filtering, it runs seamlessly in the background. Originally written in Java and later migrated to Kotlin, this project enhanced my skills in codebase management and API integration."
+    description: "An open-source dynamic wallpaper changer that automatically downloads and sets wallpapers from Reddit based on user-defined preferences. Featuring a non-repetitive selection algorithm, it ensures fresh backgrounds without repeats. With an easy installation, a GUI for customization, system tray support, and resolution filtering, it runs seamlessly in the background. Originally written in Java and later migrated to Kotlin."
     links: 
       - https://github.com/Mamiglia/Reddit-Wallpaper
 

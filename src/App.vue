@@ -6,11 +6,10 @@
     <transition name="fade">
       <div class="footbar" v-if="showFootbar && ($route.path === '/' || !isNarrow)">
         <nav>
-          <RouterLink class="hoverable" to="/projects" @mouseover="showFinger" @mouseleave="hideFinger">Projects</RouterLink>
           <RouterLink class="hoverable" to="/publications" @mouseover="showFinger" @mouseleave="hideFinger">Publications</RouterLink>
+          <RouterLink class="hoverable" to="/projects" @mouseover="showFinger" @mouseleave="hideFinger">Projects</RouterLink>
           <RouterLink class="hoverable" to="/teachings" @mouseover="showFinger" @mouseleave="hideFinger">Teachings</RouterLink>
           <RouterLink class="hoverable" to="/bio" @mouseover="showFinger" @mouseleave="hideFinger">Bio</RouterLink>
-          <a class="hoverable" href="/notes" target="_blank" @mouseover="showFinger" @mouseleave="hideFinger">Notes</a>
         </nav>
       </div>
     </transition>
@@ -100,6 +99,7 @@ a.hoverable {
 
 .finger-image {
   position: fixed;
+  z-index: 3; /* above the footbar, which comes later in the DOM */
   width: 4em;
   transition: all 0.8s ease; /* Updated transition duration to 0.8s */
   bottom: -100vh;

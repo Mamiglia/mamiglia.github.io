@@ -37,6 +37,10 @@ onMounted(async () => {
     font-size: 1rem;
 }
 
+.bio-text {
+    white-space: pre-line;
+}
+
 .face-looker-container {
     width: 300px;
     height: 300px;
