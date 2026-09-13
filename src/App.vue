@@ -4,6 +4,7 @@
       <div class="footbar" v-if="showFootbar && ($route.path === '/' || !isPortrait)">
         <nav>
           <RouterLink class="hoverable" to="/projects" @mouseover="showFinger" @mouseleave="hideFinger">Projects</RouterLink>
+          <RouterLink class="hoverable" to="/publications" @mouseover="showFinger" @mouseleave="hideFinger">Publications</RouterLink>
           <RouterLink class="hoverable" to="/teachings" @mouseover="showFinger" @mouseleave="hideFinger">Teachings</RouterLink>
           <RouterLink class="hoverable" to="/bio" @mouseover="showFinger" @mouseleave="hideFinger">Bio</RouterLink>
           <a class="hoverable" href="/notes" target="_blank" @mouseover="showFinger" @mouseleave="hideFinger">Notes</a>
@@ -15,10 +16,17 @@
 </template>
 
 <script setup lang="ts">
-import { ref, type Ref } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 
-const isPortrait: Ref<boolean> = ref(window.matchMedia("(orientation: portrait)").matches);
+const narrowQuery = window.matchMedia('(max-width: 768px)');
+const isPortrait = ref(narrowQuery.matches);
 const showFootbar = ref(false);
+
+function onNarrowChange(e: MediaQueryListEvent) {
+  isPortrait.value = e.matches;
+}
+onMounted(() => narrowQuery.addEventListener('change', onNarrowChange));
+onBeforeUnmount(() => narrowQuery.removeEventListener('change', onNarrowChange));
 
 setTimeout(() => {
   showFootbar.value = true;
@@ -47,54 +55,18 @@ const hideFinger = () => {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
-
-.app {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-  background-color: #f5f5f5;
-  color: black;
-  text-align: center;
-}
-
-.landing h1 {
-  font-size: 3rem;
-}
 .page {
-display: flex;
-width: 100vw;
+  display: flex;
+  width: 100vw;
 }
 
 .content {
   flex: 1;
   padding: 50px;
-  max-width: 50vw;
 }
 
 .bold {
   font-weight: bold;
-}
-
-.subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  height: 1.5rem;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-.links a {
-  font-size: 1.5rem;
-  margin: 0 10px;
-  transition: all 0.3s ease;
-}
-
-.links a:hover {
-  color: #FF8800;
 }
 
 .footbar {
@@ -146,10 +118,18 @@ a.hoverable {
   transition: all 0.3s ease;
 }
 
-@media (orientation: portrait) {
+@media (max-width: 768px) {
   .page {
-
     flex-direction: column;
+  }
+
+  /* Views center .content with auto margins; on narrow screens that
+     shrink-wraps inside the column flexbox, so force full width. */
+  .content {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 1.25em;
   }
 
   .footbar {
@@ -157,7 +137,7 @@ a.hoverable {
     bottom: 0;
     width: 100%;
     opacity: 0;
-    animation: fadeIn 2.5s forwards 2s;
+    animation: fadeIn 1s forwards 0.3s;
   }
 
   .footbar nav {
@@ -171,9 +151,8 @@ a.hoverable {
     margin: 0;
   }
 
-  img {
+  .finger-image {
     display: none;
   }
-  
 }
 </style>

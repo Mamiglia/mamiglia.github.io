@@ -25,20 +25,8 @@ a.social {
   color: var(--palette-dark-orange);
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0;
-  }
-}
-
-@media (orientation: portrait) {
+/* Single narrow-screen breakpoint used across the site. */
+@media (max-width: 768px) {
   #app {
     display: flex;
     flex-direction: column;
@@ -47,11 +35,6 @@ a.social {
   body, html, #app {
     width: 100vw;
     height: auto;
-  }
-
-  .content {
-    margin-top: 0 !important;
-    padding:2em !important;
   }
 
   :root {

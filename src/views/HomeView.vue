@@ -8,16 +8,15 @@
   </h1>
   <p class="subtitle">{{ displayedTitle }}</p>
   <div class="links">
-    <a class="social" href="https://scholar.google.com/citations?user=vqTkq7wAAAAJ" target="_blank">
+    <a class="social" href="https://scholar.google.com/citations?user=vqTkq7wAAAAJ" target="_blank" aria-label="Google Scholar">
       <font-awesome-icon :icon="['fab', 'google-scholar']" />
     </a>
-    <a class="social" href="https://github.com/mamiglia" target="_blank">
+    <a class="social" href="https://github.com/mamiglia" target="_blank" aria-label="GitHub">
       <svg-icon type="mdi" :path="mdiGithub"></svg-icon>
     </a>
-    <a class="social" href="https://www.linkedin.com/in/mamiglia" target="_blank">
+    <a class="social" href="https://www.linkedin.com/in/mamiglia" target="_blank" aria-label="LinkedIn">
       <svg-icon type="mdi" :path="mdiLinkedin"></svg-icon>
     </a>
-    <!-- Add more links as needed -->
   </div>
 </div>
 </template>
@@ -70,33 +69,7 @@ onMounted(() => {
 );
 </script>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body, html, #app {
-  height: 100vh;
-  width: 100vw;
-  font-family: 'Courier Prime', monospace;
-}
-
-.app {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-  background-color: white;
-  color: black;
-  text-align: center;
-}
-
+<style scoped>
 .landing {
   display: flex;
   flex-direction: column;
@@ -152,7 +125,7 @@ body, html, #app {
   margin-top: 1em;
 }
 
-@media (orientation: portrait) {
+@media (max-width: 768px) {
   .face-looker-container {
     width: 150px;
     height: 150px;
@@ -160,28 +133,15 @@ body, html, #app {
   }
 
   .landing h1 {
-    /* font-size: 3.5rem; */
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: start;
   }
 
-  /* .subtitle {
-    font-size: 1.4rem;
-    /* height: 1em; */
-  /* } */
-
-
-
   .social svg {
     width: 2.5rem;
     height: 2.5rem;
-  } 
-
-
-  
+  }
 }
-
-
 </style>

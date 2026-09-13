@@ -2,9 +2,9 @@
 <div class="page">
     <Sidebar />
     <div class="content">
-      <h1 class="title">Teachings</h1>
-      <div class="teachings-list">
-        <TeachingCard v-for="teaching in teachings" :key="teaching.title" :teaching="teaching" />
+      <h1 class="title">Publications</h1>
+      <div class="publications-list">
+        <PublicationEntry v-for="pub in publications" :key="pub.title" :publication="pub" />
       </div>
     </div>
 </div>
@@ -12,38 +12,29 @@
 
 <script setup lang="ts">
 import Sidebar from '../components/Sidebar.vue';
-import TeachingCard from '../components/TeachingCard.vue';
+import PublicationEntry, { type Publication } from '../components/PublicationEntry.vue';
 
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
 import yaml from 'js-yaml';
 
-interface Teaching {
-    title: string;
-    place: string;
-    description: string;
-    link?: string;
-    year: string;
-    role: string;
-}
-
-const teachings = ref<Teaching[]>([]);
+const publications = ref<Publication[]>([]);
 
 onMounted(async () => {
-    const response = await axios.get('/docs/teachings.yaml');
-    const data = yaml.load(response.data) as { teachings: Teaching[] };
-    teachings.value = data.teachings || [];
+    const response = await axios.get('/docs/publications.yaml');
+    const data = yaml.load(response.data) as { publications: Publication[] };
+    publications.value = (data.publications || []).sort((a, b) => b.year - a.year);
 });
 </script>
 
 <style scoped>
 .content {
   display: flex;
-  max-width: 70vw;
+  flex-direction: column;
+  max-width: 60vw;
   margin: 50px auto;
   padding: 20px;
   color: #333;
-  flex-direction: column;
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -51,13 +42,12 @@ onMounted(async () => {
   font-size: 2rem;
   font-family: 'Courier Prime', monospace;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
 
-.teachings-list {
+.publications-list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
 }
 
 @media (max-width: 768px) {

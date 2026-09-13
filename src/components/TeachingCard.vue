@@ -11,7 +11,7 @@
     </div>
     <p class="teaching-description">{{ teaching.description }}</p>
     </div>
-    <a :href="teaching.link" target="_blank" class="teaching-link" aria-label="Teaching link">
+    <a v-if="teaching.link" :href="teaching.link" target="_blank" class="teaching-link" aria-label="Course page">
     <svg-icon type="mdi" :path="mdiLink"></svg-icon>
     </a>
 </div>
@@ -100,7 +100,7 @@ transition: color 0.2s ease-in-out;
 color: var(--palette-orange);
 }
 
-@media (orientation: portrait) {
+@media (max-width: 768px) {
 .teaching-card {
     border-left: none;
     border-top: 4px solid var(--palette-dark-orange);

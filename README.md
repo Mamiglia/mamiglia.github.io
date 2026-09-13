@@ -1,33 +1,31 @@
 # mamiglia.github.io
 
-This template should help get you started developing with Vue 3 in Vite.
+Personal site of Matteo Migliarini, built with Vue 3, Vite and TypeScript. Deployed to GitHub Pages from the `vue-main` branch by `.github/workflows/deploy.yaml`.
 
-## Recommended IDE Setup
+## Where the content lives
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+All text content is loaded at runtime from `public/docs/`, so most updates need no code change:
 
-## Type Support for `.vue` Imports in TS
+| File | Page |
+| --- | --- |
+| `public/docs/bio.md` | Bio |
+| `public/docs/projects.yaml` | Projects (open source, side projects). Each entry needs a `year`; the page sorts newest first. |
+| `public/docs/publications.yaml` | Publications, sorted by year. Authors are one comma-separated string; `*` marks equal contribution. Entries with `featured: true` also appear as cards on the Projects page. |
+| `public/docs/teachings.yaml` | Teachings |
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+Project images go in `public/project_images/` and are referenced by file name in the YAML (`image: name.jpg`). Links are auto-iconed: GitHub URLs get a git icon, arXiv URLs a paper icon, everything else a link icon.
 
-## Customize configuration
+Site-wide metadata (description, Open Graph tags, JSON-LD) is in `index.html`. A plain-text summary for crawlers and LLMs is in `public/llms.txt`.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+The face that follows the cursor is `src/components/FaceLooker.vue`, driven by the pre-rendered frames in `public/faces/`.
 
-## Project Setup
+## Development
+
+Requires [Bun](https://bun.sh). The type check also needs Node on the PATH, because vue-tsc cannot resolve `.vue` modules when Bun runs it in place of Node. On NixOS: `nix shell nixpkgs#bun nixpkgs#nodejs_22`.
 
 ```sh
 bun install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-bun dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-bun run build
+bun run dev         # http://localhost:5173
+bun run build       # production build in dist/
+bun run type-check  # vue-tsc, runs in CI before the build
 ```

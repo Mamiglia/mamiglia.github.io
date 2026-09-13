@@ -6,13 +6,13 @@
         </h1>
         </RouterLink>
     <div class="social-buttons">
-    <a class="social" href="https://scholar.google.com/citations?user=vqTkq7wAAAAJ" target="_blank">
+    <a class="social" href="https://scholar.google.com/citations?user=vqTkq7wAAAAJ" target="_blank" aria-label="Google Scholar">
       <font-awesome-icon :icon="['fab', 'google-scholar']" />
     </a>
-            <a class="social" href="https://github.com/mamiglia" target="_blank">
+    <a class="social" href="https://github.com/mamiglia" target="_blank" aria-label="GitHub">
       <font-awesome-icon :icon="['fab', 'github']" />
     </a>
-    <a class="social" href="https://www.linkedin.com/in/mamiglia" target="_blank">
+    <a class="social" href="https://www.linkedin.com/in/mamiglia" target="_blank" aria-label="LinkedIn">
       <font-awesome-icon :icon="['fab', 'linkedin']" />
     </a>
         </div>
@@ -28,6 +28,7 @@
 
     <nav v-if="isPortrait" :class="{'dropdown-menu': true, 'open': showMenu}">
       <RouterLink to="/projects">Projects</RouterLink>
+      <RouterLink to="/publications">Publications</RouterLink>
       <RouterLink to="/teachings">Teachings</RouterLink>
       <RouterLink to="/bio">Bio</RouterLink>
       <a href="/notes" target="_blank">Notes</a>
@@ -43,27 +44,28 @@ import { ref, onMounted, onBeforeUnmount, type Ref, computed } from 'vue';
 
 library.add(faGithub, faLinkedin, faGoogleScholar, faBars);
 
+const narrowQuery = window.matchMedia('(max-width: 768px)');
 const showMenu = ref(false);
+const isPortrait: Ref<boolean> = ref(narrowQuery.matches);
 const displayName = computed(() => isPortrait.value ? 'M.': 'Matteo');
-const isPortrait: Ref<boolean> = ref(window.matchMedia("(orientation: portrait)").matches);
 
 function toggleMenu() {
   showMenu.value = !showMenu.value;
 }
 
-function handleResize() {
-  isPortrait.value = window.matchMedia("(max-width: 768px)").matches;
+function onNarrowChange(e: MediaQueryListEvent) {
+  isPortrait.value = e.matches;
   if (!isPortrait.value) {
     showMenu.value = false;
   }
 }
 
 onMounted(() => {
-  window.addEventListener("resize", handleResize);
+  narrowQuery.addEventListener('change', onNarrowChange);
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener("resize", handleResize);
+  narrowQuery.removeEventListener('change', onNarrowChange);
 });
 
 </script>

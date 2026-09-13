@@ -19,20 +19,29 @@ import ProjectCard from '../components/ProjectCard.vue';
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
 import axios from 'axios';
 import yaml from 'js-yaml';
-
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faFileAlt, faLink } from '@fortawesome/free-solid-svg-icons';
-
-library.add(faFileAlt, faLink, faGithub);
+import type { Publication } from '../components/PublicationEntry.vue';
 
 interface Project {
     title: string;
+    year: number;
     description: string;
-    links: string[];
+    links?: string[];
+    image?: string;
 }
 
 const projects = ref<Project[]>([]);
+
+// Publications flagged `featured` in publications.yaml also show up here as
+// cards, so each paper is written once and the two pages cannot drift apart.
+function toProject(pub: Publication): Project {
+    return {
+        title: pub.title,
+        year: pub.year,
+        description: pub.summary,
+        links: pub.links.map(link => link.url),
+        image: pub.image,
+    };
+}
 
 // Deal projects into columns round-robin (1st -> left, 2nd -> right, ...)
 // so each column stays in order and the newest entries sit on the top row,
@@ -51,9 +60,16 @@ function onLayoutChange(e: MediaQueryListEvent) {
 
 onMounted(async () => {
     narrowQuery.addEventListener('change', onLayoutChange);
-    const response = await axios.get('/docs/projects.yaml');
-    const data = yaml.load(response.data) as { projects: Project[] };
-    projects.value = data.projects || [];
+    const [projectsRes, pubsRes] = await Promise.all([
+        axios.get('/docs/projects.yaml'),
+        axios.get('/docs/publications.yaml'),
+    ]);
+    const own = (yaml.load(projectsRes.data) as { projects: Project[] }).projects || [];
+    const pubs = (yaml.load(pubsRes.data) as { publications: (Publication & { featured?: boolean })[] }).publications || [];
+    const featured = pubs.filter(pub => pub.featured).map(toProject);
+    // Newest first; within a year, publications come before projects and
+    // both keep their file order (Array.prototype.sort is stable).
+    projects.value = [...featured, ...own].sort((a, b) => b.year - a.year);
 });
 
 onBeforeUnmount(() => {
@@ -90,8 +106,10 @@ onBeforeUnmount(() => {
   }
 
   .content {
-    max-width: 100vw;
-    padding: 20px 0;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 1em;
   }
 }
 
