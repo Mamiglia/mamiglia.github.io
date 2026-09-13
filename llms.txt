@@ -1,0 +1,38 @@
+# Matteo Migliarini
+
+> AI Safety Researcher and Software Engineer. Ph.D. candidate in Computer Science at Sapienza University of Rome. Fellow at LASR Labs, London.
+
+Personal site: https://mamiglia.github.io/ (single-page app; the plain-text sources below contain the same content).
+
+## About
+
+- Ph.D. in Computer Science, Sapienza University of Rome, 2024–present. Supervised by Fabio Galasso and Indro Spinelli. Research focus: safety measures for advanced AI systems, robust AI, responsible deployment.
+- LASR Labs Fellowship, London, Jul 2026–present. Scalable oversight: evaluating model capability once benchmarks saturate; testing whether model rollouts carry capability signal beyond raw accuracy. Mentored by Magda Dubois (UK AISI) and Justin Olive (Generality Labs).
+- ARENA 5.0, London, May 2025. Capstone on a self-suppressing attention head in GPT-2 (Honorable Mention).
+- Algoverse AI, Jun–Dec 2025. Mentored a team of 5 from research ideation to publication.
+- Accenture, Rome, Sep 2021–Jan 2022. Software engineer on a healthcare data analytics pipeline (SQL, Java/Spring, JS).
+- M.Sc. Data Science (2022–2024) and B.Sc. Engineering in Computer Science (2019–2022), Sapienza University of Rome.
+- Open source: substantial work on Inspect AI (UK AISI), 20+ PRs and issues across inspect_ai and inspect_evals; occasional contributions to PyTorch.
+
+## Publications
+
+- Quantifying Self-Preservation Bias in Large Language Models. M. Migliarini et al. EMNLP 2026. https://arxiv.org/abs/2604.02174
+- Video Unlearning via Low-Rank Refusal Vector. S. Facchiano, S. Saravalle, M. Migliarini et al. ICLR 2026. https://arxiv.org/abs/2506.07891
+- Human Motion Unlearning. E. De Matteis*, M. Migliarini* et al. AAAI 2026. https://arxiv.org/abs/2503.18674
+- @GrokSet: Multi-Party Human-LLM Interactions in Social Media. M. Migliarini et al. 2026. https://arxiv.org/abs/2602.21236
+- SeRpEnt: Selective Resampling for Expressive State Space Models. ICML 2024 Workshop on Next Generation of Sequence Modeling. https://arxiv.org/abs/2501.11729
+- The Self-Hating Attention Head: A Deep Dive in GPT-2. LessWrong, 2025. https://www.lesswrong.com/posts/wxPvdBwWeaneAsWRB/the-self-hating-attention-head-a-deep-dive-in-gpt-2-1
+
+## Links
+
+- Google Scholar: https://scholar.google.com/citations?user=vqTkq7wAAAAJ
+- GitHub: https://github.com/mamiglia
+- LinkedIn: https://www.linkedin.com/in/mamiglia
+- Email: matteo.migliarini@uniroma1.it
+
+## Source files
+
+- Bio: https://mamiglia.github.io/docs/bio.md
+- Publications (YAML): https://mamiglia.github.io/docs/publications.yaml
+- Projects (YAML): https://mamiglia.github.io/docs/projects.yaml
+- Teaching (YAML): https://mamiglia.github.io/docs/teachings.yaml

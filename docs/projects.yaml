@@ -1,53 +1,38 @@
 projects:
-  - title: "@Grokset: Human-LLM Interactions in Social Media"
-    description: "A large-scale research dataset analyzing how the @Grok model operates in public social media discourse. The dataset comprises over 1M tweets collected across seven months from X, capturing complex multi-party interactions. Our findings reveal how users invoke @Grok as an authoritative arbiter in polarizing debates, document the engagement gap between AI and human peers, and show how users bypass safety filters through simple persona adoption."
-    image: https://cdn.britannica.com/36/182036-050-6D213520/Oedipus-Sphinx-interior-kylix-Attic-Vatican-Museums-c-470-bce.jpg?w=300
-  - title: "Human Motion Unlearning"
-    description: "We introduce Human Motion Unlearning (AAAI'26): removing violent behaviors (like punching or kicking) from text-to-motion models. Our method, LCR (Latent Code Replacement), erases harmful motion patterns directly in the model’s latent space. No retraining needed, no loss in quality."
-    links:
-      - https://arxiv.org/abs/2503.18674
-      - https://www.pinlab.org/hmu
-      - https://github.com/Mamiglia/hmu
-    image: hmu.png
-  - title: "Video Unlearning via Low-Rank Refusal Vector"
-    description: "In this paper, accepted at ICLR'26, we introduce the first training-free method to remove harmful concepts from video diffusion models. Our approach, the Low-Rank Refusal Vector, uses just a few safe/unsafe prompt pairs to erase unwanted content like nudity or violence permanently, without retraining or quality loss."
-    links:
-      - https://arxiv.org/abs/2506.07891
-      - https://www.pinlab.org/video-unlearning
-    image: vu-lrrv.png
-  - title: "Inspect AI Contribution"
-    description: "Integrated the Anthropic API for Azure Foundry and contributed a usability fix to Inspect AI for remote SSH users, streamlining the remote evaluation workflow."
+  - title: "Inspect AI Contributions"
+    year: 2026
+    description: "Integrated the Anthropic API for Azure Foundry and contributed a usability fix to Inspect AI for remote SSH users, streamlining the remote evaluation workflow. Over the last months I have also opened 20+ PRs and issues across Inspect AI and Inspect Evals, the UK AISI evaluation framework and its benchmark suite."
     links:
       - https://github.com/UKGovernmentBEIS/inspect_ai/pull/2935
       - https://github.com/UKGovernmentBEIS/inspect_ai/pull/2880
-  - title: "SeRpEnt"
-    description: "We propose Selective Resampling for Expressive State Space Models, a State Space Model that enhances Mamba’s selective mechanism with resampling to compress sequences efficiently. Our approach improves Long Range Arena performance and boosts language modeling accuracy, demonstrating the benefits of selective resampling. Accepted at ICML 2024 Workshop: Next Generation of Sequence Modeling."
-    links:
-      - https://arxiv.org/abs/2501.11729
-      - https://sites.google.com/view/ngsmworkshop/accepted-papers
-    image: serpent.png
+      - https://github.com/search?q=org%3AUKGovernmentBEIS+author%3Amamiglia&type=issues
   - title: "Mergecraft"
+    year: 2024
     description: "an Open-Source Python library designed to simplify the process of merging machine learning models, enabling data scientists to combine the strengths of fine-tuned models without the need for retraining. By providing a flexible interface and supporting various merging techniques like TIES, SLERP, and DARE, Mergecraft allows users to explore and experiment with novel strategies. It integrates seamlessly with Hugging Face models and supports the development of custom merging methods, offering a more efficient alternative to traditional model ensembles."
     links:
       - https://mamiglia.notion.site/Mergecraft-6decfd9415314eaf8dc5e68c078ffe6e
       - https://github.com/Mamiglia/Mergecraft
     image: the-alchemist.jpg
   - title: "PyTorch Contribution"
+    year: 2024
     description: "Contributed directly to the PyTorch library. I identified and resolved a documentation issue in `torch.optim` examples for per-parameter options, successfully merging a pull request that clarifies advanced optimization best practices for thousands of developers."
     links:
       - https://github.com/pytorch/pytorch/pull/117436
       - https://github.com/pytorch/pytorch/issues/115935
       - https://docs.pytorch.org/docs/stable/optim.html#per-parameter-options
   - title: "Bayesian NN × Human Pose Forecasting"
+    year: 2023
     description: "The goal of this model is to predict human poses in dynamic scenarios, such as human-robot interaction and autonomous driving, while accounting for uncertainty. The model has been trained using the Human3.6M dataset and uses a Space-Time Graph Convolutional Network to address the complexities of the movement forecasting. Thanks to the Bayesian approach, we're able to estimate the uncertainty of the prediction, allowing for risk estimation and cautios approach when deploying such models in the proximity of humans."
     links:
       - https://github.com/Mamiglia/BNN_Human_motion
   - title: Finite States Automaton.web
+    year: 2022
     description: "A website that makes it easy to create and edit Finite States Automaton, allowing one to develop a deeper understanding of the theory behind FSA and Acceptors. The website is built to be easy to use, even for beginners, targeting mainly Computer Science students. The technologies used are mainly Vue.js and responsive CSS, following most modern web-dev practices."
     links:
       - https://mamiglia.github.io/meravigliosi-automi
       - https://github.com/Mamiglia/meravigliosi-automi
   - title: "Reddit Wallpaper"
+    year: 2021
     description: "An open-source dynamic wallpaper changer that automatically downloads and sets wallpapers from Reddit based on user-defined preferences. Featuring a non-repetitive selection algorithm, it ensures fresh backgrounds without repeats. With an easy installation, a GUI for customization, system tray support, and resolution filtering, it runs seamlessly in the background. Originally written in Java and later migrated to Kotlin, this project enhanced my skills in codebase management and API integration."
     links: 
       - https://github.com/Mamiglia/Reddit-Wallpaper
