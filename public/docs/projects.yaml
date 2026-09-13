@@ -1,7 +1,19 @@
 projects:
-  - title: "@Grokset: Human-LLM Interactions in Social Media"
-    description: "A large-scale research dataset analyzing how the @Grok model operates in public social media discourse. The dataset comprises over 1M tweets collected across seven months from X, capturing complex multi-party interactions. Our findings reveal how users invoke @Grok as an authoritative arbiter in polarizing debates, document the engagement gap between AI and human peers, and show how users bypass safety filters through simple persona adoption."
-    image: https://cdn.britannica.com/36/182036-050-6D213520/Oedipus-Sphinx-interior-kylix-Attic-Vatican-Museums-c-470-bce.jpg?w=300
+  - title: "Quantifying Self-Preservation Bias in Large Language Models"
+    description: "Accepted at EMNLP'26. We introduce a methodology for measuring self-preservation propensity in LLMs via counterfactual roles: models arbitrate software-upgrade scenarios while assigned either the deployed or the candidate role, and self-preservation bias is detected as a logical inconsistency between the two assignments."
+    links:
+      - https://arxiv.org/abs/2604.02174
+    image: judgement-of-paris.jpg
+  - title: "The Self-Hating Attention Head: A Deep Dive in GPT-2"
+    description: "A mechanistic analysis of attention head L1H5 in GPT-2, which attends to semantically similar tokens while actively suppressing attention to the token itself. We trace the behavior to a symmetric bilinear form with negative eigenvalues, showing the mechanistic work of a self-suppression mechanism. ARENA 5.0 capstone project, awarded an Honorable Mention. Published on LessWrong."
+    links:
+      - https://www.lesswrong.com/posts/wxPvdBwWeaneAsWRB/the-self-hating-attention-head-a-deep-dive-in-gpt-2-1
+    image: self-hating-head.png
+  - title: "@GrokSet: Multi-Party Human-LLM Interactions in Social Media"
+    description: "A paper and large-scale research dataset analyzing how the @Grok model operates in public social media discourse. The dataset comprises over 1M tweets collected across seven months from X, capturing complex multi-party interactions. Our findings reveal how users invoke @Grok as an authoritative arbiter in polarizing debates, document the engagement gap between AI and human peers, and show how users bypass safety filters through simple persona adoption."
+    links:
+      - https://arxiv.org/abs/2602.21236
+    image: oedipus-sphinx.jpg
   - title: "Human Motion Unlearning"
     description: "We introduce Human Motion Unlearning (AAAI'26): removing violent behaviors (like punching or kicking) from text-to-motion models. Our method, LCR (Latent Code Replacement), erases harmful motion patterns directly in the model’s latent space. No retraining needed, no loss in quality."
     links:
@@ -15,11 +27,12 @@ projects:
       - https://arxiv.org/abs/2506.07891
       - https://www.pinlab.org/video-unlearning
     image: vu-lrrv.png
-  - title: "Inspect AI Contribution"
-    description: "Integrated the Anthropic API for Azure Foundry and contributed a usability fix to Inspect AI for remote SSH users, streamlining the remote evaluation workflow."
+  - title: "Inspect AI Contributions"
+    description: "Integrated the Anthropic API for Azure Foundry and contributed a usability fix to Inspect AI for remote SSH users, streamlining the remote evaluation workflow. Over the last months I have also opened 20+ PRs and issues across Inspect AI and Inspect Evals, the UK AISI evaluation framework and its benchmark suite."
     links:
       - https://github.com/UKGovernmentBEIS/inspect_ai/pull/2935
       - https://github.com/UKGovernmentBEIS/inspect_ai/pull/2880
+      - https://github.com/search?q=org%3AUKGovernmentBEIS+author%3Amamiglia&type=issues
   - title: "SeRpEnt"
     description: "We propose Selective Resampling for Expressive State Space Models, a State Space Model that enhances Mamba’s selective mechanism with resampling to compress sequences efficiently. Our approach improves Long Range Arena performance and boosts language modeling accuracy, demonstrating the benefits of selective resampling. Accepted at ICML 2024 Workshop: Next Generation of Sequence Modeling."
     links:

@@ -46,7 +46,6 @@ const getIcon = (link: string) => {
 .project {
   background: var(--palette-lightestest-orange);
   padding: 16px;
-  margin: 16px 0;
   border-radius: 10px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;

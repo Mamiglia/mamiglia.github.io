@@ -4,7 +4,9 @@
     <div class="content">
     <h1>Projects</h1>
     <div class="projects-grid">
-        <ProjectCard v-for="project in projects" :key="project.title" :project="project" />
+        <div v-for="(column, i) in columns" :key="i" class="projects-column">
+            <ProjectCard v-for="project in column" :key="project.title" :project="project" />
+        </div>
     </div>
     </div>
 </div>
@@ -14,7 +16,7 @@
 import Sidebar from '../components/Sidebar.vue';
 import ProjectCard from '../components/ProjectCard.vue';
 
-import { ref, onMounted } from 'vue';
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
 import axios from 'axios';
 import yaml from 'js-yaml';
 
@@ -32,10 +34,30 @@ interface Project {
 
 const projects = ref<Project[]>([]);
 
+// Deal projects into columns round-robin (1st -> left, 2nd -> right, ...)
+// so each column stays in order and the newest entries sit on the top row,
+// while every column packs its cards without gaps.
+const narrowQuery = window.matchMedia('(max-width: 768px)');
+const columnCount = ref(narrowQuery.matches ? 1 : 2);
+const columns = computed(() => {
+    const cols: Project[][] = Array.from({ length: columnCount.value }, () => []);
+    projects.value.forEach((project, i) => cols[i % columnCount.value].push(project));
+    return cols;
+});
+
+function onLayoutChange(e: MediaQueryListEvent) {
+    columnCount.value = e.matches ? 1 : 2;
+}
+
 onMounted(async () => {
+    narrowQuery.addEventListener('change', onLayoutChange);
     const response = await axios.get('/docs/projects.yaml');
     const data = yaml.load(response.data) as { projects: Project[] };
     projects.value = data.projects || [];
+});
+
+onBeforeUnmount(() => {
+    narrowQuery.removeEventListener('change', onLayoutChange);
 });
 </script>
 
@@ -48,15 +70,23 @@ onMounted(async () => {
 }
 
 .projects-grid {
-  column-count: 2;
-  column-gap: 1em;
+  display: flex;
+  gap: 1em;
+  align-items: flex-start;
+}
+
+.projects-column {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
 @media (max-width: 768px) {
   .projects-grid {
-    display: flex;
     flex-direction: column;
-    column-count: unset;
+    align-items: stretch;
   }
 
   .content {

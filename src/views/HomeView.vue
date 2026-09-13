@@ -8,6 +8,9 @@
   </h1>
   <p class="subtitle">{{ displayedTitle }}</p>
   <div class="links">
+    <a class="social" href="https://scholar.google.com/citations?user=vqTkq7wAAAAJ" target="_blank">
+      <font-awesome-icon :icon="['fab', 'google-scholar']" />
+    </a>
     <a class="social" href="https://github.com/mamiglia" target="_blank">
       <svg-icon type="mdi" :path="mdiGithub"></svg-icon>
     </a>
@@ -23,9 +26,14 @@
 import { ref, onMounted } from 'vue';
 import SvgIcon from '@jamescoyle/vue-icon';
 import { mdiGithub, mdiLinkedin } from '@mdi/js';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faGoogleScholar } from '@fortawesome/free-brands-svg-icons';
 import FaceLooker from '../components/FaceLooker.vue';
 
-const titles = ["AI Researcher", "Computer Engineer", "Data Scientist"];
+library.add(faGoogleScholar);
+
+const titles = ["AI Safety Researcher", "Software Engineer", "Ph.D. Candidate"];
 const displayedTitle = ref("");
 const titleIndex = ref(0);
 const charIndex = ref(0);

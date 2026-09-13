@@ -6,6 +6,9 @@
         </h1>
         </RouterLink>
     <div class="social-buttons">
+    <a class="social" href="https://scholar.google.com/citations?user=vqTkq7wAAAAJ" target="_blank">
+      <font-awesome-icon :icon="['fab', 'google-scholar']" />
+    </a>
             <a class="social" href="https://github.com/mamiglia" target="_blank">
       <font-awesome-icon :icon="['fab', 'github']" />
     </a>
@@ -34,11 +37,11 @@
 <script setup lang="ts">
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faGoogleScholar } from '@fortawesome/free-brands-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { ref, onMounted, onBeforeUnmount, type Ref, computed } from 'vue';
 
-library.add(faGithub, faLinkedin, faBars);
+library.add(faGithub, faLinkedin, faGoogleScholar, faBars);
 
 const showMenu = ref(false);
 const displayName = computed(() => isPortrait.value ? 'M.': 'Matteo');
