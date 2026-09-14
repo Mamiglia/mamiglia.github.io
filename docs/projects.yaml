@@ -6,13 +6,6 @@ projects:
       - https://github.com/UKGovernmentBEIS/inspect_ai/pull/2935
       - https://github.com/UKGovernmentBEIS/inspect_ai/pull/2880
       - https://github.com/search?q=org%3AUKGovernmentBEIS+author%3Amamiglia&type=issues
-  - title: "Mergecraft"
-    year: 2024
-    description: "An open-source Python library for merging fine-tuned models without retraining. It supports TIES, SLERP and DARE, works with Hugging Face models, and makes custom merging methods easy to add."
-    links:
-      - https://mamiglia.notion.site/Mergecraft-6decfd9415314eaf8dc5e68c078ffe6e
-      - https://github.com/Mamiglia/Mergecraft
-    image: the-alchemist.jpg
   - title: "PyTorch Contribution"
     year: 2024
     description: "Fixed the documentation of per-parameter options in the optimizer module, clarifying how advanced optimizer settings are meant to be used. Merged upstream."
@@ -20,7 +13,14 @@ projects:
       - https://github.com/pytorch/pytorch/pull/117436
       - https://github.com/pytorch/pytorch/issues/115935
       - https://docs.pytorch.org/docs/stable/optim.html#per-parameter-options
+  - title: "Mergecraft"
   - title: "Bayesian NN × Human Pose Forecasting"
+    year: 2024
+    description: "An open-source Python library for merging fine-tuned models without retraining. It supports TIES, SLERP and DARE, works with Hugging Face models, and makes custom merging methods easy to add."
+    links:
+      - https://mamiglia.notion.site/Mergecraft-6decfd9415314eaf8dc5e68c078ffe6e
+      - https://github.com/Mamiglia/Mergecraft
+    image: the-alchemist.jpg
     year: 2023
     description: "Predicts human poses in dynamic scenes such as human-robot interaction and autonomous driving, with a Bayesian Space-Time Graph Convolutional Network trained on Human3.6M. The uncertainty estimate allows risk-aware deployment near people."
     links:
