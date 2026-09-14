@@ -2,7 +2,7 @@
 <div class="page">
     <Sidebar />
     <div class="content">
-      <h1 class="title">Publications</h1>
+      <h1 class="title">Publications (selected)</h1>
       <div class="publications-list">
         <PublicationEntry v-for="pub in publications" :key="pub.title" :publication="pub" />
       </div>

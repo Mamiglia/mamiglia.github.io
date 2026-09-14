@@ -9,20 +9,20 @@ publications:
     links:
       - label: arXiv
         url: https://arxiv.org/abs/2604.02174
+      - label: Code
+        url: https://github.com/Mamiglia/self_preservation_eval
     image: judgement-of-paris.jpg
-  - title: "Video Unlearning via Low-Rank Refusal Vector"
-    authors: "Simone Facchiano, Stefano Saravalle, Matteo Migliarini, Edoardo De Matteis, Alessio Sampieri, Andrea Pilzer, Emanuele Rodolà, Indro Spinelli, Luca Franco, Fabio Galasso"
-    venue: "ICLR"
-    year: 2026
+  - title: "The Self-Hating Attention Head: A Deep Dive in GPT-2"
+    authors: "Matteo Migliarini"
+    venue: "LessWrong"
+    year: 2025
     featured: true
-    type: conference
-    summary: "The first training-free method to remove harmful concepts from video diffusion models, using a low-rank refusal vector built from a handful of safe/unsafe prompt pairs."
+    type: post
+    summary: "Mechanistic analysis of head L1H5 in GPT-2, which attends to semantically similar tokens while suppressing attention to the token itself. ARENA 5.0 capstone, Honorable Mention."
     links:
-      - label: arXiv
-        url: https://arxiv.org/abs/2506.07891
-      - label: Project page
-        url: https://www.pinlab.org/video-unlearning
-    image: vu-lrrv.png
+      - label: Post
+        url: https://www.lesswrong.com/posts/wxPvdBwWeaneAsWRB/the-self-hating-attention-head-a-deep-dive-in-gpt-2-1
+    image: self-hating-head.png
   - title: "Human Motion Unlearning"
     authors: "Edoardo De Matteis*, Matteo Migliarini*, Alessio Sampieri, Indro Spinelli, Fabio Galasso"
     venue: "AAAI"
@@ -49,27 +49,29 @@ publications:
       - label: arXiv
         url: https://arxiv.org/abs/2602.21236
     image: oedipus-sphinx.jpg
-  - title: "The Self-Hating Attention Head: A Deep Dive in GPT-2"
-    authors: "Matteo Migliarini"
-    venue: "LessWrong"
-    year: 2025
+  - title: "Video Unlearning via Low-Rank Refusal Vector"
+    authors: "Simone Facchiano, Stefano Saravalle, Matteo Migliarini, Edoardo De Matteis, Alessio Sampieri, Andrea Pilzer, Emanuele Rodolà, Indro Spinelli, Luca Franco, Fabio Galasso"
+    venue: "ICLR"
+    year: 2026
     featured: true
-    type: post
-    summary: "Mechanistic analysis of head L1H5 in GPT-2, which attends to semantically similar tokens while suppressing attention to the token itself. ARENA 5.0 capstone, Honorable Mention."
-    links:
-      - label: Post
-        url: https://www.lesswrong.com/posts/wxPvdBwWeaneAsWRB/the-self-hating-attention-head-a-deep-dive-in-gpt-2-1
-    image: self-hating-head.png
-  - title: "SeRpEnt: Selective Resampling for Expressive State Space Models"
-    authors: "Stefano Rando, Luca Romani, Matteo Migliarini, Luca Franco, Denis Gudovskiy, Fabio Galasso"
-    venue: "ICML NGSM Workshop"
-    year: 2024
-    featured: true
-    type: workshop
-    summary: "Extends Mamba's selective mechanism with resampling to compress sequences, improving Long Range Arena performance and language modeling accuracy."
+    type: conference
+    summary: "The first training-free method to remove harmful concepts from video diffusion models, using a low-rank refusal vector built from a handful of safe/unsafe prompt pairs."
     links:
       - label: arXiv
-        url: https://arxiv.org/abs/2501.11729
-      - label: Workshop
-        url: https://sites.google.com/view/ngsmworkshop/accepted-papers
-    image: serpent.png
+        url: https://arxiv.org/abs/2506.07891
+      - label: Project page
+        url: https://www.pinlab.org/video-unlearning
+    image: vu-lrrv.png
+  # - title: "SeRpEnt: Selective Resampling for Expressive State Space Models"
+  #   authors: "Stefano Rando, Luca Romani, Matteo Migliarini, Luca Franco, Denis Gudovskiy, Fabio Galasso"
+  #   venue: "ICML NGSM Workshop"
+  #   year: 2024
+  #   featured: true
+  #   type: workshop
+  #   summary: "Extends Mamba's selective mechanism with resampling to compress sequences, improving Long Range Arena performance and language modeling accuracy."
+  #   links:
+  #     - label: arXiv
+  #       url: https://arxiv.org/abs/2501.11729
+  #     - label: Workshop
+  #       url: https://sites.google.com/view/ngsmworkshop/accepted-papers
+  #   image: serpent.png
